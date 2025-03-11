@@ -35,22 +35,26 @@ TIPOS DE DADOS
 */
 
 public interface empilhavel {
-//C -> REATE (criar)
-//R -> EAD (ler) 
-//U -> PDATE (atualizar)
-//D -> ELETE (deletar/apagar)
-//S -> ORT (ordernar)
-//
-// Funções Básicas/Principais
-void empilhar(Object obj);  // push
-Object desempilhar();	    // pop	
-Object topo();		    // top
-void atualizar(Object obj); // update
+	// C -> REATE (criar)
+	// R -> EAD (ler)
+	// U -> PDATE (atualizar)
+	// D -> ELETE (deletar/apagar)
+	// S -> ORT (ordernar)
+	//
+	// Funções Básicas/Principais
+	void empilhar(Object obj); // push
 
-// Operações auxiliares
-Boolean estaCheia();        // isFull | overflow
-Boolean estaVazia();	    // isEmpty| underflow
-String imprimir();	    // print	
+	Object desempilhar(); // pop
 
+	Object topo(); // top
+
+	void atualizar(Object obj); // update
+
+	// Operações auxiliares
+	Boolean estaCheia(); // isFull | overflow
+
+	Boolean estaVazia(); // isEmpty| underflow
+
+	String imprimir(); // print
 
 }
