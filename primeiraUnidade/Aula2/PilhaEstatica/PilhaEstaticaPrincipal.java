@@ -1,4 +1,4 @@
-package primeiraUnidade.Aula2;
+package primeiraUnidade.Aula2.PilhaEstatica;
 
 import primeiraUnidade.Aula1.Empilhavel;
 
