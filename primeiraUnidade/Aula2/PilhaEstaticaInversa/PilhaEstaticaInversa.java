@@ -69,7 +69,7 @@ public class PilhaEstaticaInversa implements Empilhavel {
     }
 
     @Override
-    public String imprimir() {                      // retorna uma String com todos objetos da pilha/stack
+    public String imprimir() {                      // retorna uma String com todos objets da pilha/stack
         String resultado = "[";
         for (int i = ponteiroTopo; i >= 0; i--) {
             if (i == 0) {

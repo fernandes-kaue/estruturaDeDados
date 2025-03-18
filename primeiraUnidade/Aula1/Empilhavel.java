@@ -1,4 +1,6 @@
-package primeiraUnidade.Aula1;/*
+package primeiraUnidade.Aula1;
+
+/*
 TIPOS DE DADOS
 
 
@@ -38,7 +40,7 @@ public interface Empilhavel {
 	// C -> REATE (criar)
 	// R -> EAD (ler)
 	// U -> PDATE (atualizar)
-	// D -> ELETE (deletar/apagar)
+	// D -> ELETE (deleter/apagar)
 	// S -> ORT (ordernar)
 	//
 	// Funções Básicas/Principais

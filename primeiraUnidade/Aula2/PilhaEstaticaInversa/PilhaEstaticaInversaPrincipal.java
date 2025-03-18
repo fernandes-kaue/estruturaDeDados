@@ -3,7 +3,7 @@ package primeiraUnidade.Aula2.PilhaEstaticaInversa;
 import primeiraUnidade.Aula1.Empilhavel;
 
 public class PilhaEstaticaInversaPrincipal {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Empilhavel pilha = new PilhaEstaticaInversa(7);
         pilha.empilhar("Instituto");
         pilha.empilhar("Federal");
