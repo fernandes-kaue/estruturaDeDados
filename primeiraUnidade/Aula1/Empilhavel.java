@@ -1,4 +1,4 @@
-/*
+package primeiraUnidade.Aula1;/*
 TIPOS DE DADOS
 
 
@@ -34,7 +34,7 @@ TIPOS DE DADOS
 
 */
 
-public interface empilhavel {
+public interface Empilhavel {
 	// C -> REATE (criar)
 	// R -> EAD (ler)
 	// U -> PDATE (atualizar)
