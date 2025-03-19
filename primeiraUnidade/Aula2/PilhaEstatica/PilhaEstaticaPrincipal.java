@@ -20,6 +20,6 @@ public class PilhaEstaticaPrincipal {
         pilha.empilhar("Bahia");
         pilha.empilhar(pilha.desempilhar());
         pilha.empilhar(conteudo);
-        System.out.println("Pilha="+pilha.imprimir());
+        System.out.println("Pilha=" + pilha.imprimir());
     }
 }
