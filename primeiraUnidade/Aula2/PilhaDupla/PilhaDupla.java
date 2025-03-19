@@ -21,7 +21,7 @@ public class PilhaDupla implements Empilhavel {
     // metodos principais
 
     /* pensei em utilizar um parametro booleano para selecionar a pilha,
-    mas o usuário final nao se importaria de qual pilha estaria salvo,
+    mas o usuário final nao se importaria tanto sobre qual pilha estaria salvo,
     apenas se estaria salvo :p */
     @Override
     public void empilhar(Object obj) {
