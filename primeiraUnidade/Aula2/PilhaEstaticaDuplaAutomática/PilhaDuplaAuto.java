@@ -1,20 +1,20 @@
-package primeiraUnidade.Aula2.PilhaDupla;
+package primeiraUnidade.Aula2.PilhaEstaticaDuplaAutomática;
 
 import primeiraUnidade.Aula1.Empilhavel;
 
-public class PilhaDupla implements Empilhavel {
+public class PilhaDuplaAuto implements Empilhavel {
     private Object[] dados;
     private int ponteiro1;
     private int ponteiro2;
 
     // construtores
-    public PilhaDupla(int tamanho) {
+    public PilhaDuplaAuto(int tamanho) {
         ponteiro1 = -1;
         ponteiro2 = tamanho;
         dados = new Object[tamanho];
     }
 
-    public PilhaDupla() {
+    public PilhaDuplaAuto() {
         this(10);
     }
 

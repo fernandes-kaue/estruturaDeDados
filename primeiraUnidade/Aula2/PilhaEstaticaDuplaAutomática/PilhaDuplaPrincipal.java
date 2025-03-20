@@ -1,10 +1,10 @@
-package primeiraUnidade.Aula2.PilhaDupla;
+package primeiraUnidade.Aula2.PilhaEstaticaDuplaAutomática;
 
 import primeiraUnidade.Aula1.Empilhavel;
 
 public class PilhaDuplaPrincipal {
     public static void main(String[] args) {
-        Empilhavel pilha = new PilhaDupla(10);
+        Empilhavel pilha = new PilhaDuplaAuto(10);
         pilha.empilhar("Instituto");
         pilha.empilhar("Federal");
         System.out.println("Espiar:" + pilha.topo());
