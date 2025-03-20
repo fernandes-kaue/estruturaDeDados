@@ -26,15 +26,17 @@ public class PilhaDupla implements Empilhavel {
     @Override
     public void empilhar(Object obj) {
         if (!estaCheia()) {
-            // Verifica se uma das pilhas está vazia e adiciona nela
-            if (ponteiro1 == -1) { // Pilha normal vazia
-                dados[++ponteiro1] = obj;
-            } else if (ponteiro2 == dados.length) { // Pilha invertida vazia
+            if (ponteiro2 == dados.length) {
+                // Se a pilha invertida está vazia, adiciona nela primeiro
                 dados[--ponteiro2] = obj;
-            } else if (ponteiro1 + 1 < ponteiro2) { // Há espaço para a pilha normal
+            } else if (ponteiro1 == -1) {
+                // Se a pilha normal está vazia, adiciona nela
                 dados[++ponteiro1] = obj;
-            } else if (ponteiro2 - 1 > ponteiro1) { // Há espaço para a pilha invertida
+            } else if (ponteiro2 - 1 > ponteiro1) {
+                // Continua empilhando alternadamente conforme o espaço disponível
                 dados[--ponteiro2] = obj;
+            } else {
+                dados[++ponteiro1] = obj;
             }
         } else {
             System.err.println("Pilha está cheia!");
@@ -42,32 +44,54 @@ public class PilhaDupla implements Empilhavel {
     }
 
 
+
+    /* na minha cabeça a pilha invertida é do meow pra frente,
+    entao tem de ser desempilhada primeiro */
     @Override
     public Object desempilhar() {
         Object dadoTopo = null;
         if (!estaVazia()) {
-            if (ponteiro1 >=0) {
-                dadoTopo = dados[ponteiro1];
-                ponteiro1--;
-            } else if (ponteiro2 < dados.length) {
+            if (ponteiro2 < dados.length) {
+                // Desempilha da pilha invertida primeiro
                 dadoTopo = dados[ponteiro2];
                 ponteiro2++;
-            } else {
-                System.err.println("Pilha está completamente vazia!");
+            } else if (ponteiro1 >= 0) {
+                // Depois desempilha da pilha normal
+                dadoTopo = dados[ponteiro1];
+                ponteiro1--;
             }
+        } else {
+            System.err.println("Pilha está completamente vazia!");
         }
         return dadoTopo;
     }
 
+
     @Override
     public Object topo() {
-        return null;
+        if (ponteiro2 < dados.length) {
+            return dados[ponteiro2]; // Retorna topo da pilha invertida
+        } else if (ponteiro1 >= 0) {
+            return dados[ponteiro1]; // Retorna topo da pilha normal
+        }
+        return null; // Ambas as pilhas estão vazias
     }
+
+
 
     @Override
     public void atualizar(Object obj) {
-
+        if (ponteiro2 < dados.length) {
+            // Atualiza o topo da pilha invertida primeiro
+            dados[ponteiro2] = obj;
+        } else if (ponteiro1 >= 0) {
+            // Se a pilha invertida está vazia, atualiza o topo da pilha normal
+            dados[ponteiro1] = obj;
+        } else {
+            System.err.println("Pilha vazia! Nada para atualizar.");
+        }
     }
+
 
     // metodos auxiliares
     @Override
@@ -77,11 +101,22 @@ public class PilhaDupla implements Empilhavel {
 
     @Override
     public Boolean estaVazia() {
-            return (ponteiro1 == -1 || ponteiro2 == dados.length);
+        return (ponteiro1 == -1 || ponteiro2 == dados.length);
     }
 
     @Override
     public String imprimir() {
-        return "";
+        StringBuilder sb = new StringBuilder("Pilha 1: ");
+        for (int i = 0; i <= ponteiro1; i++) {
+            sb.append(dados[i]).append(" ");
+        }
+
+        sb.append("\nPilha 2: ");
+        for (int i = dados.length - 1; i >= ponteiro2; i--) {
+            sb.append(dados[i]).append(" ");
+        }
+
+        return sb.toString();
     }
+
 }
