@@ -51,7 +51,7 @@ public class PilhaEstatica implements Empilhavel { // classe implementa interfac
     }
 
     @Override
-    public void atualizar(Object obj) {             // metodo para atualizar objeto do topo da pilha/stack
+    public void atualizar(Object obj) {             // methods para atualizar objeto do topo da pilha/stack
         if (!estaVazia()) {
             dados[ponteiroTopo] = obj;
         } else throw new ArrayIndexOutOfBoundsException("Pilha esta Vazia");

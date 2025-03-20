@@ -46,7 +46,15 @@ public class PilhaDupla implements Empilhavel {
     public Object desempilhar() {
         Object dadoTopo = null;
         if (!estaVazia()) {
-
+            if (ponteiro1 >=0) {
+                dadoTopo = dados[ponteiro1];
+                ponteiro1--;
+            } else if (ponteiro2 < dados.length) {
+                dadoTopo = dados[ponteiro2];
+                ponteiro2++;
+            } else {
+                System.err.println("Pilha está completamente vazia!");
+            }
         }
         return dadoTopo;
     }
@@ -64,12 +72,12 @@ public class PilhaDupla implements Empilhavel {
     // metodos auxiliares
     @Override
     public Boolean estaCheia() {
-        return null;
+        return (ponteiro1 + 1 == ponteiro2);
     }
 
     @Override
     public Boolean estaVazia() {
-        return null;
+            return (ponteiro1 == -1 || ponteiro2 == dados.length);
     }
 
     @Override
