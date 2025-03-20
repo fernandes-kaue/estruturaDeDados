@@ -9,9 +9,9 @@ public class PilhaDupla implements Empilhavel {
 
     // construtores
     public PilhaDupla(int tamanho) {
-        dados = new Object[tamanho];
         ponteiro1 = -1;
         ponteiro2 = tamanho;
+        dados = new Object[tamanho];
     }
 
     public PilhaDupla() {
