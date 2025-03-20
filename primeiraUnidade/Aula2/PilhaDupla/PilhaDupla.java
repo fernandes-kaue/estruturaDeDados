@@ -26,22 +26,18 @@ public class PilhaDupla implements Empilhavel {
     @Override
     public void empilhar(Object obj) {
         if (!estaCheia()) {
-            if (ponteiro2 == dados.length) {
-                // Se a pilha invertida está vazia, adiciona nela primeiro
-                dados[--ponteiro2] = obj;
-            } else if (ponteiro1 == -1) {
-                // Se a pilha normal está vazia, adiciona nela
-                dados[++ponteiro1] = obj;
-            } else if (ponteiro2 - 1 > ponteiro1) {
-                // Continua empilhando alternadamente conforme o espaço disponível
-                dados[--ponteiro2] = obj;
+            if ((ponteiro1 + ponteiro2) % 2 == 1) {
+                dados[++ponteiro1] = obj; // Adiciona na pilha normal primeiro
             } else {
-                dados[++ponteiro1] = obj;
+                dados[--ponteiro2] = obj; // Depois adiciona na pilha invertida
             }
         } else {
             System.err.println("Pilha está cheia!");
         }
     }
+
+
+
 
 
 
@@ -51,20 +47,17 @@ public class PilhaDupla implements Empilhavel {
     public Object desempilhar() {
         Object dadoTopo = null;
         if (!estaVazia()) {
-            if (ponteiro2 < dados.length) {
-                // Desempilha da pilha invertida primeiro
-                dadoTopo = dados[ponteiro2];
-                ponteiro2++;
-            } else if (ponteiro1 >= 0) {
-                // Depois desempilha da pilha normal
-                dadoTopo = dados[ponteiro1];
-                ponteiro1--;
+            if (ponteiro1 >= 0) {
+                dadoTopo = dados[ponteiro1--]; // Remove primeiro da pilha normal
+            } else if (ponteiro2 < dados.length) {
+                dadoTopo = dados[ponteiro2++]; // Depois da pilha invertida
             }
         } else {
             System.err.println("Pilha está completamente vazia!");
         }
         return dadoTopo;
     }
+
 
 
     @Override
@@ -107,12 +100,12 @@ public class PilhaDupla implements Empilhavel {
     @Override
     public String imprimir() {
         StringBuilder sb = new StringBuilder("Pilha 1: ");
-        for (int i = 0; i <= ponteiro1; i++) {
+        for (int i = dados.length - 1; i >= ponteiro2; i--) {
             sb.append(dados[i]).append(" ");
         }
 
         sb.append("\nPilha 2: ");
-        for (int i = dados.length - 1; i >= ponteiro2; i--) {
+        for (int i = 0; i <= ponteiro1; i++) {
             sb.append(dados[i]).append(" ");
         }
 
