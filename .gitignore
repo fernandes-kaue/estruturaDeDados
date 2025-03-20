@@ -7,6 +7,13 @@
 # BlueJ files
 *.ctxt
 
+#folders
+.idea/
+out/production/
+
+#idk
+estruturaDeDados.iml
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 

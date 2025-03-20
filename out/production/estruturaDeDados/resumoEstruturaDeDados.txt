@@ -1,1 +1,0 @@
-Uma Estrutura de Dados(ED) é uma coleção tanto de valores (e seus relacionamentos) quanto de operações (sobre os valores e estruturas decorrentes). É uma implementação concreta de um Tipo Abstrato de Dado(TAD) ou um Tipo de Dado(TD) básico ou primitivo. Assim, o termo ED pode ser considerado um sinônimo de TD, se considerado TAD um hipônimo de TD, isto é, se um TAD for um TD.
