@@ -31,7 +31,7 @@ public class FilaEstaticaCircular implements Enfileiravel{
             System.out.println("Fila está cheia");
         }
 
-    };
+    }
 
     @Override
     public Object desenfileirar() {
