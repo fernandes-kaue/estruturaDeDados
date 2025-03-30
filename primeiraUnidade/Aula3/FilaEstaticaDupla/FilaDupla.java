@@ -7,6 +7,18 @@ public class FilaDupla implements DuplamenteEnfileiravel {
     private int ponteiroFim;    // tail
     private int quantidade;
 
+    // construtores
+    public FilaDupla(int tamanho) {
+        ponteiroInicio = 0;
+        ponteiroFim = -1;
+        quantidade = 0;
+        dados = new Object[tamanho];
+    }
+
+    public FilaDupla() {
+        this(10);
+    }
+
     // metodos principais
     @Override
     public void enfileirarInicio(Object dado) {
@@ -23,7 +35,7 @@ public class FilaDupla implements DuplamenteEnfileiravel {
 
     @Override
     public void enfileirarFim(Object dado) {
-// TODO
+        // TODO
     }
 
     @Override
