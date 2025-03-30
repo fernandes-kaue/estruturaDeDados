@@ -26,7 +26,7 @@ public class FilaEstatica implements Enfileiravel {
             ponteiroFim++;
             dados[ponteiroFim] = dado;
         } else {
-            System.out.println("Fila está cheia");
+            System.err.println("Fila está cheia");
         }
 
     };
@@ -39,7 +39,7 @@ public class FilaEstatica implements Enfileiravel {
         if (!estaVazia()) {
             frente = dados[ponteiroInicio];
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return frente;
@@ -72,7 +72,7 @@ public class FilaEstatica implements Enfileiravel {
             frente = dados[ponteiroInicio];
             ponteiroInicio++;
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return frente;
