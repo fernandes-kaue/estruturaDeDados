@@ -28,7 +28,7 @@ public class FilaEstaticaCircular implements Enfileiravel{
             dados[ponteiroFim] = dado;
             quantidade++;
         } else {
-            System.out.println("Fila está cheia");
+            System.err.println("Fila está cheia");
         }
 
     }
@@ -43,7 +43,7 @@ public class FilaEstaticaCircular implements Enfileiravel{
 
             quantidade--;
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return frente;
@@ -73,7 +73,7 @@ public class FilaEstaticaCircular implements Enfileiravel{
         if (!estaVazia()) {
             frente = dados[ponteiroInicio];
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return frente;

@@ -7,6 +7,18 @@ public class FilaDupla implements DuplamenteEnfileiravel {
     private int ponteiroFim;    // tail
     private int quantidade;
 
+    // construtores
+    public FilaDupla(int tamanho) {
+        ponteiroInicio = 0;
+        ponteiroFim = -1;
+        quantidade = 0;
+        dados = new Object[tamanho];
+    }
+
+    public FilaDupla() {
+        this(10);
+    }
+
     // metodos principais
     @Override
     public void enfileirarInicio(Object dado) {
@@ -16,14 +28,14 @@ public class FilaDupla implements DuplamenteEnfileiravel {
             dados[ponteiroFim] = dado;
             quantidade++;
         } else {
-            System.out.println("Fila está cheia");
+            System.err.println("Fila está cheia");
         }
 
     }
 
     @Override
     public void enfileirarFim(Object dado) {
-// TODO
+        // TODO
     }
 
     @Override
@@ -33,7 +45,7 @@ public class FilaDupla implements DuplamenteEnfileiravel {
         if (!estaVazia()) {
             frente = dados[ponteiroInicio];
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return frente;
@@ -73,7 +85,7 @@ public class FilaDupla implements DuplamenteEnfileiravel {
 
             quantidade--;
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return frente;
@@ -89,7 +101,7 @@ public class FilaDupla implements DuplamenteEnfileiravel {
 
             quantidade--;
         } else {
-            System.out.println("Fila está vazia");
+            System.err.println("Fila está vazia");
         }
 
         return tras;
