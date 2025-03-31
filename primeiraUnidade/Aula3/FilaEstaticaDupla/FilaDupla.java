@@ -146,22 +146,6 @@ public class FilaDupla implements DuplamenteEnfileiravel {
         return ((ponteiro-1)+dados.length)%dados.length;
     }
 
-    //NOVO
-    @Override
-    public String imprimirTrasFrente() {
-        String retorno = "[";
-        int ponteiroAux = ponteiroFim;
-        for (int i = 0; i < quantidade; i++) {
-            if (i == quantidade - 1)
-                retorno += dados[ponteiroAux];
-            else
-                retorno += dados[ponteiroAux] + ",";
-
-            ponteiroAux = retroceder(ponteiroAux);
-        }
-        return retorno + "]";
-    }
-
     //funciona como o imprimir de FilaEstaticaCircular
     @Override
     public String imprimirFrenteTras() {
@@ -174,6 +158,22 @@ public class FilaDupla implements DuplamenteEnfileiravel {
                 retorno += dados[ponteiroAux] + ",";
 
             ponteiroAux = avancar(ponteiroAux);
+        }
+        return retorno + "]";
+    }
+
+    //NOVO
+    @Override
+    public String imprimirTrasFrente() {
+        String retorno = "[";
+        int ponteiroAux = ponteiroFim;
+        for (int i = 0; i < quantidade; i++) {
+            if (i == quantidade - 1)
+                retorno += dados[ponteiroAux];
+            else
+                retorno += dados[ponteiroAux] + ",";
+
+            ponteiroAux = retroceder(ponteiroAux);
         }
         return retorno + "]";
     }
