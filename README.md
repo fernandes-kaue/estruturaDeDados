@@ -2,7 +2,7 @@
 
 Repositório dedicado à matéria de Estrutura de Dados, ministrada pelo professor Cláudio Rodolfo, no decorrer do semestre 2025.1, no Instituto Federal de Educação, Ciência e Tecnologia da Bahia.
 
-## Árvore das Pastas
+## Estrutura de Pastas
 
 ```plaintext
 📦 EstruturaDeDados
@@ -24,8 +24,39 @@ Repositório dedicado à matéria de Estrutura de Dados, ministrada pelo profess
  ┃ ┃ ┣ 📂 PilhaEstaticaInversa
  ┃ ┃ ┃ ┣ 📜 PilhaInversa.java
  ┃ ┃ ┃ ┣ 📜 PilhaInversaPrincipal.java
+ ┃ ┣ 📂 Aula3
+ ┃ ┃ ┣ 📂 FilaEstatica
+ ┃ ┃ ┃ ┣ 📜 Enfileiravel.java
+ ┃ ┃ ┃ ┣ 📜 FilaEstatica.java
+ ┃ ┃ ┃ ┣ 📜 FilaEstaticaMain.java
+ ┃ ┃ ┣ 📂 FilaEstaticaCircular
+ ┃ ┃ ┃ ┣ 📜 Enfileiravel.java
+ ┃ ┃ ┃ ┣ 📜 FilaEstaticaCircular.java
+ ┃ ┃ ┃ ┣ 📜 FilaEstaticaCircularMain.java
+ ┃ ┃ ┣ 📂 FilaEstaticaDupla
+ ┃ ┃ ┃ ┣ 📜 DuplamenteEnfileiravel.java
+ ┃ ┃ ┃ ┣ 📜 FilaDupla.java
+ ┃ ┃ ┃ ┣ 📜 FilaDuplaMain.java
+ ┃ ┣ 📂 Aula4
+ ┃ ┃ ┣ 📂 FilaEstaticaComPilhas
+ ┃ ┃ ┃ ┣ 📜 Empilhavel.java
+ ┃ ┃ ┃ ┣ 📜 Enfileiravel.java
+ ┃ ┃ ┃ ┣ 📜 FilaComPilhas.java
+ ┃ ┃ ┃ ┣ 📜 FilaComPilhasMain.java
+ ┃ ┃ ┃ ┣ 📜 PilhaEstatica.java
+ ┃ ┃ ┣ 📂 ListaEstaticaCircular
+ ┃ ┃ ┃ ┣ 📜 infos gerais.txt
+ ┃ ┃ ┃ ┣ 📜 ListaEstaticaCircular.java
+ ┃ ┃ ┃ ┣ 📜 ListaEstaticaCircularMain.java
+ ┃ ┃ ┃ ┣ 📜 Listavel.java
+ ┃ ┃ ┣ 📂 PilhaEstaticaComFilas
+ ┃ ┃ ┃ ┣ 📜 Empilhavel.java
+ ┃ ┃ ┃ ┣ 📜 Enfileiravel.java
+ ┃ ┃ ┃ ┣ 📜 FilaCircular.java
+ ┃ ┃ ┃ ┣ 📜 PilhaComFilas.java
+ ┃ ┃ ┃ ┣ 📜 PilhaComFilasMain.java
  ┣ 📂 segundaUnidade
  ┣ 📂 terceiraUnidade
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
-
+ ┣ 📜 README.md
