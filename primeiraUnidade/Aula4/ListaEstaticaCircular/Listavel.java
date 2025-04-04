@@ -1,3 +1,5 @@
+package primeiraUnidade.Aula4.ListaEstaticaCircular;
+
 public interface Listavel {
     // inserir         - Insert (local especifico
     // anexar          - append (final
@@ -13,13 +15,12 @@ public interface Listavel {
     Object[] selecionarTodos();
     void atualizar(Object dado, int posicao);
     Object apagar(int posicao);
-    boolean contem(Object dado);
-    void limpar();
 
     // extras
     // int primeiraOcorrencia(Object dado);
     // int ultimaOcorrencia(Object dado);
-    //
+    // boolean contem(Object dado);
+    // void limpar();
 
     // auxiliares
     boolean estaCheia();

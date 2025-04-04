@@ -1,4 +1,4 @@
-package primeiraUnidade.Aula4.FilaComPilhas;
+package primeiraUnidade.Aula4.FilaEstaticaComPilhas;
 
 public interface Empilhavel {
     //métodos principais

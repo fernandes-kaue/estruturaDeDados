@@ -1,4 +1,4 @@
-package primeiraUnidade.Aula4.PilhaComFilas;
+package primeiraUnidade.Aula4.PilhaEstaticaComFilas;
 
 public interface Empilhavel {
     void empilhar(Object elemento);

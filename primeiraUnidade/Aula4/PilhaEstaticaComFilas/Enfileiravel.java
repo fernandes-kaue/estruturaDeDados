@@ -1,4 +1,4 @@
-package primeiraUnidade.Aula4.PilhaComFilas;
+package primeiraUnidade.Aula4.PilhaEstaticaComFilas;
 
 public interface Enfileiravel {
     void enfileirar(Object dado); 		//C	enqueue

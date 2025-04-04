@@ -1,4 +1,4 @@
-package primeiraUnidade.Aula4.PilhaComFilas;
+package primeiraUnidade.Aula4.PilhaEstaticaComFilas;
 
 public class FilaCircular implements Enfileiravel {
 

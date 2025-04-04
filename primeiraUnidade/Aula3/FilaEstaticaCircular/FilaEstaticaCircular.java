@@ -108,5 +108,13 @@ public class FilaEstaticaCircular implements Enfileiravel{
         return retorno + "]";
     }
 
+    private int avancar(int ponteiro) {
+		return (ponteiro+1)%dados.length;
+	}
+
+	private int retroceder(int ponteiro) {
+		return ((ponteiro-1)+dados.length)%dados.length;
+	}
+
 }
 
