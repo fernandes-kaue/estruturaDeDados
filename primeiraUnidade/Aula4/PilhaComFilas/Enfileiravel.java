@@ -1,4 +1,4 @@
-public interface Enfileiravel1 {
+public interface Enfileiravel {
     void enfileirar(Object dado); 		//C	enqueue
     Object frente();					//R	front
     void atualizarInicio(Object dado);	//U	update

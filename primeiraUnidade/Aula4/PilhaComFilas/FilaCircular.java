@@ -1,18 +1,18 @@
-public class FilaCircular implements Enfileiravel {
+public class FilaEstaticaCircular implements Enfileiravel {
 
     private int ponteiroInicio;	//cabeca = head
     private int ponteiroFim;	//cauda  = tail
     private int quantidade;
     private Object[] dados;
 
-    public FilaCircular(int tamanho) {
+    public FilaEstaticaCircular(int tamanho) {
         ponteiroInicio = 0;
         ponteiroFim = -1;
         quantidade = 0;
         dados = new Object[tamanho];
     }
 
-    public FilaCircular() {
+    public FilaEstaticaCircular() {
         this(10);
     }
 
