@@ -1,4 +1,6 @@
-public class PilhaEstatica implements Empilhavel1 {
+package primeiraUnidade.Aula4.FilaComPilhas;
+
+public class PilhaEstatica implements Empilhavel {
 
     private int ponteiroTopo;
     private Object[] dados;

@@ -1,53 +1,67 @@
-public class FilaComPilhas implements Enfileiravel1 {
-    Empilhavel1 p1;
-    Empilhavel1 p2;
+package primeiraUnidade.Aula4.FilaComPilhas;
 
-    // construtores
+public class FilaComPilhas implements Enfileiravel {
+
+    private Empilhavel p1;
+    private Empilhavel p2;
+
     public FilaComPilhas() {
         this(10);
     }
 
-    public FilaComPilhas(int tamanho){
+    public FilaComPilhas(int tamanho) {
         p1 = new PilhaEstatica(tamanho);
         p2 = new PilhaEstatica(tamanho);
     }
 
-    // metodos principais
     @Override
     public void enfileirar(Object dado) {
         if (!estaCheia()) {
+            //já colocar os elementos como numa fila.. FIFO
+            while(!p1.estaVazia()) {
+                p2.empilhar(p1.desempilhar());
+            }
+
             p1.empilhar(dado);
+
+            while(!p2.estaVazia()) {
+                p1.empilhar(p2.desempilhar());
+            }
+        } else {
+            System.err.println("Fila Cheia!");
         }
     }
 
     @Override
     public Object desenfileirar() {
         Object dadoInicio = null;
-        while (!p1.estaVazia()) {
-            p2.empilhar((p1.desempilhar()));
-        }
-        dadoInicio = p2.desempilhar();
-        while(!p2.estaVazia()) {
-            p1.empilhar(p2.desempilhar());
+        if (!estaVazia()) {
+            dadoInicio = p1.desempilhar();
+        } else {
+            System.err.println("Fila Vazia!");
         }
         return dadoInicio;
     }
 
     @Override
+    public void atualizarInicio(Object dado) {
+    }
+
+    @Override
+    public void atualizarFim(Object dado) {
+    }
+
+    @Override
     public Object frente() {
         Object dadoInicio = null;
-        while (!p1.estaVazia()) {
-            p2.empilhar((p1.desempilhar()));
-        }
-        dadoInicio = p2.espiar();
-        while(!p2.estaVazia()) {
-            p1.empilhar(p2.desempilhar());
+        if (!estaVazia()) {
+            dadoInicio = p1.espiar();
+        } else {
+            System.err.println("Fila Vazia!");
         }
         return dadoInicio;
     }
 
-
-    // metodos auxiliares
     @Override
     public boolean estaCheia() {
         return p1.estaCheia();
@@ -56,5 +70,10 @@ public class FilaComPilhas implements Enfileiravel1 {
     @Override
     public boolean estaVazia() {
         return p1.estaVazia();
+    }
+
+    @Override
+    public String imprimir() {
+        return p1.imprimir();
     }
 }

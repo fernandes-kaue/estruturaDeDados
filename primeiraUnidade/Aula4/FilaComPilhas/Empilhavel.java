@@ -1,3 +1,5 @@
+package primeiraUnidade.Aula4.FilaComPilhas;
+
 public interface Empilhavel {
     //métodos principais
     void empilhar(Object dado);	//C
