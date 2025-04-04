@@ -1,3 +1,5 @@
+package primeiraUnidade.Aula4.PilhaComFilas;
+
 public interface Empilhavel {
     void empilhar(Object elemento);
     Object desempilhar();

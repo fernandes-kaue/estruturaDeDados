@@ -1,18 +1,20 @@
-public class FilaEstaticaCircular implements Enfileiravel {
+package primeiraUnidade.Aula4.PilhaComFilas;
+
+public class FilaCircular implements Enfileiravel {
 
     private int ponteiroInicio;	//cabeca = head
     private int ponteiroFim;	//cauda  = tail
     private int quantidade;
     private Object[] dados;
 
-    public FilaEstaticaCircular(int tamanho) {
+    public FilaCircular(int tamanho) {
         ponteiroInicio = 0;
         ponteiroFim = -1;
         quantidade = 0;
         dados = new Object[tamanho];
     }
 
-    public FilaEstaticaCircular() {
+    public FilaCircular() {
         this(10);
     }
 

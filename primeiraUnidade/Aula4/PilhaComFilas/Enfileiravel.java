@@ -1,3 +1,5 @@
+package primeiraUnidade.Aula4.PilhaComFilas;
+
 public interface Enfileiravel {
     void enfileirar(Object dado); 		//C	enqueue
     Object frente();					//R	front

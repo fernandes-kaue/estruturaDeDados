@@ -1,14 +1,20 @@
-public class PilhaEstaticaComFilas implements Empilhavel {
+package primeiraUnidade.Aula4.PilhaComFilas;
+
+import primeiraUnidade.Aula4.PilhaComFilas.FilaCircular;
+import primeiraUnidade.Aula4.PilhaComFilas.Enfileiravel;
+import primeiraUnidade.Aula4.FilaComPilhas.Empilhavel;
+
+public class PilhaComFilas implements Empilhavel {
 
     private Enfileiravel f1;
     private Enfileiravel f2;
 
-    public PilhaEstaticaComFilas(int tamanho) {
+    public PilhaComFilas(int tamanho) {
         f1 = new FilaEstaticaCircular(tamanho);
         f2 = new FilaEstaticaCircular(tamanho);
     }
 
-    public PilhaEstaticaComFilas() {
+    public PilhaComFilas() {
         this(10);
     }
 
