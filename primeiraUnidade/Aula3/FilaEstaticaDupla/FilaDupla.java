@@ -20,91 +20,110 @@ public class FilaDupla implements DuplamenteEnfileiravel {
     }
 
     // metodos principais
+
+    //NOVO
     @Override
     public void enfileirarInicio(Object dado) {
+        if (!estaCheia()){
+            ponteiroInicio = retroceder(ponteiroInicio);
+            dados[ponteiroInicio] = dado;
+            //não deixar ponteiroFim esquecido, caso a estrutura esteja na 1ª inserção
+            if (estaVazia())
+                ponteiroFim = ponteiroInicio;
 
-        if (!estaCheia()) {
-            ponteiroFim = (ponteiroFim+1)%dados.length;
-            dados[ponteiroFim] = dado;
             quantidade++;
         } else {
-            System.err.println("Fila está cheia");
+            System.err.println("Queue is full!");
         }
-
     }
 
+    //funciona como o enfileirar de FilaEstaticaCircular
     @Override
     public void enfileirarFim(Object dado) {
-        // TODO
-    }
-
-    @Override
-    public Object frente() {
-        Object frente = null;
-
-        if (!estaVazia()) {
-            frente = dados[ponteiroInicio];
-        } else {
-            System.err.println("Fila está vazia");
-        }
-
-        return frente;
-    }
-
-    @Override
-    public Object tras() {
-        //TODO
-        return null;
-    }
-
-    @Override
-    public void atualizarInicio(Object dado) {
-        if (!estaVazia()) {
-            dados[ponteiroInicio] = dado;
-        } else {
-            System.err.println("Fila está vazia!");
-        }
-    }
-
-    @Override
-    public void atualizarFim(Object dado) {
-        if (!estaCheia()) {
+        if (!estaCheia()){
+            ponteiroFim = avancar(ponteiroFim);
             dados[ponteiroFim] = dado;
+            //não deixar ponteiroInicio esquecido, caso a estrutura esteja na 1ª inserção
+            if (estaVazia())
+                ponteiroInicio = ponteiroFim;
+
+            quantidade++;
         } else {
-            System.err.println("Fila está cheia!");
+            System.err.println("Queue is full!");
         }
     }
 
+
+    //funciona como o desenfileirar de FilaEstaticaCircular
     @Override
     public Object desenfileirarInicio() {
-        Object frente = null;
-
-        if (!estaVazia()) {
-            frente = dados[ponteiroInicio];
-            ponteiroInicio = ((ponteiroInicio-1)+dados.length)%dados.length;
-
+        Object dadoInicio = null;
+        if (!estaVazia()){
+            dadoInicio = dados[ponteiroInicio];
+            ponteiroInicio = avancar(ponteiroInicio);
             quantidade--;
         } else {
-            System.err.println("Fila está vazia");
+            System.err.println("Queue is empty!");
         }
-
-        return frente;
+        return dadoInicio;
     }
 
+    //NOVO
     @Override
     public Object desenfileirarFim() {
-        Object tras = null;
-
-        if (!estaVazia()) {
-            tras = dados[ponteiroInicio];
-            ponteiroFim = ((ponteiroFim-1)+dados.length)%dados.length;
-
+        Object dadoFim = null;
+        if (!estaVazia()){
+            dadoFim = dados[ponteiroFim];
+            ponteiroFim = retroceder(ponteiroFim);
             quantidade--;
         } else {
-            System.err.println("Fila está vazia");
+            System.err.println("Queue is empty!");
         }
+        return dadoFim;
+    }
 
-        return tras;
+    //funciona como o frente de FilaEstaticaCircular
+    @Override
+    public Object frente() {
+        Object dadoInicio = null;
+        if (!estaVazia())
+            dadoInicio = dados[ponteiroInicio];
+        else
+            System.err.println("Fila Vazia!");
+
+        return dadoInicio;
+    }
+
+    //NOVO
+    @Override
+    public Object tras() {
+        Object dadoFim = null;
+        if (!estaVazia()) {
+            dadoFim = dados[ponteiroFim];
+        } else {
+            System.err.println("Fila Vazia!");
+        }
+        return dadoFim;
+    }
+
+    //funciona como o atualizarInicio de FilaEstaticaCircular
+    @Override
+    public void atualizarInicio(Object dado) {
+        if (!estaVazia()){
+            dados[ponteiroInicio] = dado;
+        } else {
+            System.err.println("Queue is empty!");
+        }
+    }
+
+    //funciona como o atualizarFim de FilaEstaticaCircular
+    @Override
+    public void atualizarFim(Object dado) {
+        if (!estaVazia()){
+            dados[ponteiroFim] = dado;
+        } else {
+            System.err.println("Queue is empty!");
+        }
     }
 
 
@@ -119,25 +138,42 @@ public class FilaDupla implements DuplamenteEnfileiravel {
         return (quantidade == 0);
     }
 
-    @Override
-    public String imprimirTrasFrente() {
-        return null;
+    private int avancar(int ponteiro) {
+        return (ponteiro+1)%dados.length;
     }
 
+    private int retroceder(int ponteiro) {
+        return ((ponteiro-1)+dados.length)%dados.length;
+    }
+
+    //funciona como o imprimir de FilaEstaticaCircular
     @Override
     public String imprimirFrenteTras() {
         String retorno = "[";
-        for (int i = ponteiroInicio; i <= quantidade + ponteiroInicio; i++) {
-            /* funciona mas não é o mais adequado
-            if (i == dados.length) {
-                i = 0;
-            }
-            */
+        int ponteiroAux = ponteiroInicio;
+        for (int i = 0; i < quantidade; i++) {
+            if (i == quantidade - 1)
+                retorno += dados[ponteiroAux];
+            else
+                retorno += dados[ponteiroAux] + ",";
 
-            if (i == quantidade + ponteiroInicio - 1) {
-                retorno += dados[i%dados.length];
-            }
-            retorno += dados[i%dados.length] + ", ";
+            ponteiroAux = avancar(ponteiroAux);
+        }
+        return retorno + "]";
+    }
+
+    //NOVO
+    @Override
+    public String imprimirTrasFrente() {
+        String retorno = "[";
+        int ponteiroAux = ponteiroFim;
+        for (int i = 0; i < quantidade; i++) {
+            if (i == quantidade - 1)
+                retorno += dados[ponteiroAux];
+            else
+                retorno += dados[ponteiroAux] + ",";
+
+            ponteiroAux = retroceder(ponteiroAux);
         }
         return retorno + "]";
     }

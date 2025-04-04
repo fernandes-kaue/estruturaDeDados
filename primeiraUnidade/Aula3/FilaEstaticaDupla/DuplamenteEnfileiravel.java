@@ -1,17 +1,21 @@
 package primeiraUnidade.Aula3.FilaEstaticaDupla;
 
 public interface DuplamenteEnfileiravel {
-    void enfileirarInicio(Object dado);      // ja ta pronto
-    void enfileirarFim(Object dado);         // ja ta pronto
-    Object frente();                         // ja ta pronto
-    Object tras();                           //
-    void atualizarInicio(Object dado);       // ja ta pronto
-    void atualizarFim(Object dado);          // ja ta pronto
-    Object desenfileirarInicio();            // ja ta pronto
-    Object desenfileirarFim();               //
+    void enfileirarInicio(Object dado);      // NOVO
+    void enfileirarFim(Object dado);         // funciona como o enfileirar de Enfileiravel
 
-    Boolean estaCheia();                     // ja ta pronto
-    Boolean estaVazia();                     // ja ta pronto
-    String imprimirTrasFrente();
-    String imprimirFrenteTras();             // ja ta pronto
+    Object desenfileirarInicio();            // funciona como o desenfileirar de Enfileiravel
+    Object desenfileirarFim();               // NOVO
+
+    Object frente();                         // frente (funciona como o frente de Enfileiravel)
+    Object tras();                           // NOVO
+
+    void atualizarInicio(Object dado);       // funciona como o atualizarInicio de Enfileiravel
+    void atualizarFim(Object dado);          // funciona como o atualizarFim de Enfileiravel
+
+    Boolean estaCheia();                     // funciona como o estaCheia de Enfileiravel
+    Boolean estaVazia();                     // funciona como o estaVazia de Enfileiravel
+
+    String imprimirTrasFrente();             // funciona como o imprimir de Enfileiravel
+    String imprimirFrenteTras();             // NOVO
 }
