@@ -29,7 +29,7 @@ public class FilaEstatica implements Enfileiravel {
             System.err.println("Fila está cheia");
         }
 
-    };
+    }
 
 
     @Override
@@ -92,7 +92,7 @@ public class FilaEstatica implements Enfileiravel {
     @Override
     public String imprimir() {
         String retorno = "[";
-        for (int i = ponteiroInicio; ponteiroInicio <= ponteiroFim; i++) {
+        for (int i = ponteiroInicio; i <= ponteiroFim; i++) {
             if (i == ponteiroFim) {
                 retorno += dados[i];
             }
