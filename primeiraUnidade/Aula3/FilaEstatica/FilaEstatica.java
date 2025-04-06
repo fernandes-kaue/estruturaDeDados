@@ -31,6 +31,20 @@ public class FilaEstatica implements Enfileiravel {
 
     }
 
+    @Override
+    public Object desenfileirar() {
+        Object frente = null;
+
+        if (!estaVazia()) {
+            frente = dados[ponteiroInicio];
+            ponteiroInicio++;
+        } else {
+            System.err.println("Fila está vazia");
+        }
+
+        return frente;
+    }
+
 
     @Override
     public Object frente() {
@@ -61,21 +75,6 @@ public class FilaEstatica implements Enfileiravel {
         } else {
             System.err.println("Fila está cheia!");
         }
-    }
-
-
-    @Override
-    public Object desenfileirar() {
-        Object frente = null;
-
-        if (!estaVazia()) {
-            frente = dados[ponteiroInicio];
-            ponteiroInicio++;
-        } else {
-            System.err.println("Fila está vazia");
-        }
-
-        return frente;
     }
 
     // metodos auxiliares
