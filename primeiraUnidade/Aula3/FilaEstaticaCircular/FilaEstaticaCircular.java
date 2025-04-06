@@ -24,7 +24,7 @@ public class FilaEstaticaCircular implements Enfileiravel{
     public void enfileirar(Object dado) {
 
         if (!estaCheia()) {
-            ponteiroFim = (ponteiroFim+1)%dados.length;
+            ponteiroFim = avancar(ponteiroFim);
             dados[ponteiroFim] = dado;
             quantidade++;
         } else {
@@ -39,7 +39,7 @@ public class FilaEstaticaCircular implements Enfileiravel{
 
         if (!estaVazia()) {
             frente = dados[ponteiroInicio];
-            ponteiroInicio = ((ponteiroInicio-1)+dados.length)%dados.length;
+            ponteiroInicio = avancar(ponteiroFim);
 
             quantidade--;
         } else {
@@ -110,10 +110,6 @@ public class FilaEstaticaCircular implements Enfileiravel{
 
     private int avancar(int ponteiro) {
 		return (ponteiro+1)%dados.length;
-	}
-
-	private int retroceder(int ponteiro) {
-		return ((ponteiro-1)+dados.length)%dados.length;
 	}
 
 }
