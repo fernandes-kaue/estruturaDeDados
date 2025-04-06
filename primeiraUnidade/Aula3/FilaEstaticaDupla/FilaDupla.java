@@ -27,9 +27,10 @@ public class FilaDupla implements DuplamenteEnfileiravel {
         if (!estaCheia()){
             ponteiroInicio = retroceder(ponteiroInicio);
             dados[ponteiroInicio] = dado;
-            //não deixar ponteiroFim esquecido, caso a estrutura esteja na 1ª inserção
-            if (estaVazia())
-                ponteiroFim = ponteiroInicio;
+            // ACHO que o prof tinha falado que era desnecessário
+            // não deixar ponteiroFim esquecido, caso a estrutura esteja na 1ª inserção
+            // if (estaVazia())
+            //    ponteiroFim = ponteiroInicio;
 
             quantidade++;
         } else {
@@ -43,9 +44,10 @@ public class FilaDupla implements DuplamenteEnfileiravel {
         if (!estaCheia()){
             ponteiroFim = avancar(ponteiroFim);
             dados[ponteiroFim] = dado;
+            // ACHO que o prof tinha falado que era desnecessário
             //não deixar ponteiroInicio esquecido, caso a estrutura esteja na 1ª inserção
-            if (estaVazia())
-                ponteiroInicio = ponteiroFim;
+            // if (estaVazia())
+            //    ponteiroInicio = ponteiroFim;
 
             quantidade++;
         } else {
@@ -128,6 +130,8 @@ public class FilaDupla implements DuplamenteEnfileiravel {
 
 
     // metodos auxiliares
+
+    // similar ao estáCheia da FilaEstaticaCircular
     @Override
     public Boolean estaCheia() {
         return (quantidade == dados.length);

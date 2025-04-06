@@ -27,11 +27,12 @@ public class PilhaDuplaManual implements EmpilhavelDupla {
     }
 
     @Override
-    public void atualizar1(Object dado) {
-        if(!estaVazia1()) {
-            dados[ponteiroTopo1] = dado;
+    public void empilhar2(Object dado) {
+        if(!estaCheia2()) {
+            ponteiroTopo2--;
+            dados[ponteiroTopo2] = dado;
         } else {
-            System.err.println("Pilha1 Vazia!");
+            System.out.println("Pilha2 Cheia!");
         }
     }
 
@@ -48,47 +49,23 @@ public class PilhaDuplaManual implements EmpilhavelDupla {
     }
 
     @Override
-    public Object espiar1() {
+    public Object desempilhar2() {
         Object dadoTopo = null;
-        if(!estaVazia1()) {
-            dadoTopo = dados[ponteiroTopo1];
+        if(!estaVazia2()) {
+            dadoTopo = dados[ponteiroTopo2];
+            ponteiroTopo2++;
         } else {
-            System.err.println("Pilha1 Vazia!");
+            System.out.println("Pilha2 Vazia!");
         }
         return dadoTopo;
     }
 
     @Override
-    public boolean estaCheia1() {
-        return (ponteiroTopo1 == ponteiroTopo2-1);
-    }
-
-    @Override
-    public boolean estaVazia1(){
-        return (ponteiroTopo1 == -1);
-    }
-
-    @Override
-    public String imprimir1(){
-        String resultado = "[";
-        for(int i = ponteiroTopo1; i >= 0; i--) {
-            if (i == 0) {
-                resultado += dados[i];
-            }
-            else {
-                resultado += dados[i] + ",";
-            }
-        }
-        return resultado + "]";
-    }
-
-    @Override
-    public void empilhar2(Object dado) {
-        if(!estaCheia2()) {
-            ponteiroTopo2--;
-            dados[ponteiroTopo2] = dado;
+    public void atualizar1(Object dado) {
+        if(!estaVazia1()) {
+            dados[ponteiroTopo1] = dado;
         } else {
-            System.out.println("Pilha2 Cheia!");
+            System.err.println("Pilha1 Vazia!");
         }
     }
 
@@ -102,13 +79,12 @@ public class PilhaDuplaManual implements EmpilhavelDupla {
     }
 
     @Override
-    public Object desempilhar2() {
+    public Object espiar1() {
         Object dadoTopo = null;
-        if(!estaVazia2()) {
-            dadoTopo = dados[ponteiroTopo2];
-            ponteiroTopo2++;
+        if(!estaVazia1()) {
+            dadoTopo = dados[ponteiroTopo1];
         } else {
-            System.out.println("Pilha2 Vazia!");
+            System.err.println("Pilha1 Vazia!");
         }
         return dadoTopo;
     }
@@ -125,14 +101,39 @@ public class PilhaDuplaManual implements EmpilhavelDupla {
     }
 
     @Override
+    public boolean estaCheia1() {
+        return (ponteiroTopo1 == ponteiroTopo2-1);
+    }
+
+    @Override
     public boolean estaCheia2() {
         return estaCheia1();
+    }
+
+    @Override
+    public boolean estaVazia1(){
+        return (ponteiroTopo1 == -1);
     }
 
     @Override
     public boolean estaVazia2(){
         return (ponteiroTopo2 == dados.length);
     }
+
+    @Override
+    public String imprimir1(){
+        String resultado = "[";
+        for(int i = ponteiroTopo1; i >= 0; i--) {
+            if (i == 0) {
+                resultado += dados[i];
+            }
+            else {
+                resultado += dados[i] + ",";
+            }
+        }
+        return resultado + "]";
+    }
+
 
     @Override
     public String imprimir2(){
