@@ -1,6 +1,6 @@
-package primeiraUnidade.Aula4.PilhaEstaticaComFilas;
+package primeiraUnidade.Aula4e5.PilhaEstaticaComFilas;
 
-import primeiraUnidade.Aula4.FilaEstaticaComPilhas.Empilhavel;
+import primeiraUnidade.Aula4e5.FilaEstaticaComPilhas.Empilhavel;
 
 public class PilhaComFilasMain {
     public static void main(String[] args) {

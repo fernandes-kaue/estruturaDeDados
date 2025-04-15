@@ -1,6 +1,4 @@
-package primeiraUnidade.Aula4.ListaEstaticaCircular;
-
-import primeiraUnidade.Aula4.ListaEstaticaCircular.ListaEstaticaCircular;
+package primeiraUnidade.Aula4e5.ListaEstaticaCircular;
 
 public class ListaEstaticaCircularMain {
     public static void main(String[] args) {
