@@ -38,7 +38,9 @@ public class Ordenacao {
 
     }
 
-    // metodo auxiliar para bubble e insertion sort
+
+
+    // metodo auxiliar para bubble sort
     private void troca(int indice1, int indice2) {
         int aux = dados[indice1];
         dados[indice1] = dados[indice2];
