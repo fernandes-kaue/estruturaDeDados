@@ -58,4 +58,17 @@ public class Ordenacao {
         dados[indice2] = aux;
     }
 
+    // auxiliar geral
+    public String imprimirTela() {
+        String aux = "[";
+        for (int i = 0; i < dados.length; i++) {
+            if (i == dados.length - 1) {
+                aux += dados[i] + "]";
+                break;
+            }
+            aux += dados[i] + ", ";
+        }
+        return aux;
+    }
+
 }
