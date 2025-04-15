@@ -38,6 +38,17 @@ public class Ordenacao {
 
     }
 
+    public void insertionSort() {
+        for (int j = 1; j < dados.length; j++) {
+            for (int i = j - 1; i >= 0; i--) {
+                if (dados[i + 1] < dados[i]) {
+                    troca(i, i+1);
+                } else {
+                    break;
+                }
+            }
+        }
+    }
 
 
     // metodo auxiliar para bubble sort
