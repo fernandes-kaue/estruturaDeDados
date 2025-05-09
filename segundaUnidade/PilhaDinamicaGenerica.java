@@ -7,7 +7,10 @@ import java.util.NoSuchElementException;
  * @version 0.1
  * @since 2025/05/08
  */
-public class PilhaDinamicaGenerica implements Empilhavel {
+public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
+    private int tamanho;
+    private int quantidade;
+    private NoDuplo<T> ponteiroTopo;
 
     /**
      * função que empilha um dado na pilha
@@ -15,7 +18,7 @@ public class PilhaDinamicaGenerica implements Empilhavel {
      * @param dado a ser empilhado
      */
     @Override
-    public void empilhar(Object dado) {
+    public void empilhar(T dado) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'empilhar'");
     }
@@ -27,7 +30,7 @@ public class PilhaDinamicaGenerica implements Empilhavel {
      *         descartado, à escolha do usuário
      */
     @Override
-    public Object desempilhar() {
+    public T desempilhar() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'desempilhar'");
     }
@@ -38,7 +41,7 @@ public class PilhaDinamicaGenerica implements Empilhavel {
      * @return retorna o dado topo sem o remover da estrutura
      */
     @Override
-    public Object espiar() {
+    public T espiar() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'espiar'");
     }
@@ -49,7 +52,7 @@ public class PilhaDinamicaGenerica implements Empilhavel {
      * @param dado é o novo dado para o topo
      */
     @Override
-    public void atualizar(Object dado) {
+    public void atualizar(T dado) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
     }
