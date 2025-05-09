@@ -13,81 +13,23 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
     private NoDuplo<T> ponteiroTopo;
 
     /**
-     * função que empilha um dado na pilha
+     * construtor passando tamanho maximo
      * 
-     * @param dado a ser empilhado
+     * @param tamanho indicando tamanho da pilha
      */
-    @Override
-    public void empilhar(T dado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'empilhar'");
+    public PilhaDinamicaGenerica(int tamanho) {
+        this.tamanho = tamanho;
+        quantidade = 0;
+        ponteiroTopo = null;
     }
 
     /**
-     * função que desempilha (remove) um dado da pilha
-     * 
-     * @return retorna o dado que foi desempilhado, podendo este ser reutilizado ou
-     *         descartado, à escolha do usuário
+     * construtor vazio, criando uma pilha com tamanho 10 por padrao
      */
-    @Override
-    public T desempilhar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'desempilhar'");
+    public PilhaDinamicaGenerica() {
+        this(10);
     }
 
-    /**
-     * função que retorna o dado do topo da pilha sem o remover da pilha
-     * 
-     * @return retorna o dado topo sem o remover da estrutura
-     */
-    @Override
-    public T espiar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'espiar'");
-    }
-
-    /**
-     * atualiza o topo da pilha
-     * 
-     * @param dado é o novo dado para o topo
-     */
-    @Override
-    public void atualizar(T dado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
-    }
-
-    /**
-     * função para saber se pilha está cheia
-     * 
-     * @return um valor booleano que indica se está cheia ou não
-     */
-    @Override
-    public boolean estaCheia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'estaCheia'");
-    }
-
-    /**
-     * função para saber se pilha está vazia
-     * 
-     * @return um valor booleano que indica se está vazia ou não
-     */
-    @Override
-    public boolean estaVazia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'estaVazia'");
-    }
-
-    /**
-     * função que retorna uma String com todos os dados da pilha
-     * 
-     * @return uma String com todos os dados da pilha, para posterior manipulação
-     */
-    @Override
-    public String imprimir() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'imprimir'");
-    }
+    
 
 }
