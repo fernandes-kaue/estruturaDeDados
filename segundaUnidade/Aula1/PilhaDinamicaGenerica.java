@@ -32,6 +32,27 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
     }
 
     /**
+     * função que empilha um dado na pilha
+     * 
+     * @param dado a ser empilhado
+     * @throws NoSuchElementException se a piilha estiver cheia
+     */
+    @Override
+    public void empilhar(T dado) {
+        if (estaCheia()) {
+            throw new NoSuchElementException("Pilha Cheia!");
+        }
+        NoDuplo<T> noTemporario = new NoDuplo<T>();
+        noTemporario.setDado(dado);
+        noTemporario.setAnterior(ponteiroTopo);
+        if (!estaVazia()) {
+            ponteiroTopo.setProximo(noTemporario);
+        }
+        ponteiroTopo = noTemporario;
+        quantidade++;
+    }
+
+    /**
      * função que retorna o dado do topo da pilha sem o remover da pilha
      * 
      * @return retorna o dado topo sem o remover da estrutura
