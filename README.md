@@ -17,7 +17,7 @@
  ┃ ┃ ┣ 📂 FilaEstaticaComPilhas
  ┃ ┃ ┣ 📂 ListaEstaticaCircular
  ┃ ┃ ┣ 📂 PilhaEstaticaComFilas
- ┃ ┣ 📂 Aula6
+ ┃ ┣ 📂 Aula6 - Algoritmos de ordenação 
  ┣ 📂 segundaUnidade
  ┃ ┣ 📂 Aula1 - Introdução à pilhas dinâmicas
  ┣ 📂 terceiraUnidade
