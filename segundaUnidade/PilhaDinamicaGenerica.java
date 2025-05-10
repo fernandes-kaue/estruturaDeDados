@@ -31,6 +31,35 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
     }
 
     /**
+     * função que retorna o dado do topo da pilha sem o remover da pilha
+     * 
+     * @return retorna o dado topo sem o remover da estrutura
+     * @throws NoSuchElementException se pilha estiver vazia
+     */
+    @Override
+    public T espiar() {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Pilha Vazia!");
+        }
+        T dadoTopo = ponteiroTopo.getDado();
+        return dadoTopo;
+    }
+
+    /**
+     * função que atualiza o topo da pilha
+     * 
+     * @param dado é o novo dado para o topo
+     * @throws NoSuchElementException se a pilha estiver vazia
+     */
+    @Override
+    public void atualizar(T novoDado) {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Pilha Vazia!");
+        }
+        ponteiroTopo.setDado(novoDado);
+    }
+
+    /**
      * função para saber se pilha está cheia
      * 
      * @return true se cheia, false se vazia
