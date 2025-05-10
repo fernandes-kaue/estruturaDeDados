@@ -31,52 +31,6 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
     }
 
     /**
-     * função que empilha um dado na pilha
-     * 
-     * @param dado a ser empilhado
-     * @throws NoSuchElementException se a piilha estiver cheia
-     */
-    @Override
-    public void empilhar(T dado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'empilhar'");
-    }
-
-    /**
-     * função que desempilha (remove) um dado da pilha
-     * 
-     * @return retorna o dado que foi desempilhado, podendo este ser reutilizado ou
-     *         descartado, à escolha do usuário
-     */
-    @Override
-    public T desempilhar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'desempilhar'");
-    }
-
-    /**
-     * função que retorna o dado do topo da pilha sem o remover da pilha
-     * 
-     * @return retorna o dado topo sem o remover da estrutura
-     */
-    @Override
-    public T espiar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'espiar'");
-    }
-
-    /**
-     * atualiza o topo da pilha
-     * 
-     * @param dado é o novo dado para o topo
-     */
-    @Override
-    public void atualizar(T dado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
-    }
-
-    /**
      * função para saber se pilha está cheia
      * 
      * @return true se cheia, false se vazia
@@ -103,8 +57,16 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
      */
     @Override
     public String imprimir() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'imprimir'");
+        NoDuplo<T> ponteiroAuxiliar = ponteiroTopo;
+        String resultado = "[";
+        for (int i = quantidade - 1; i >= 0; i--) {
+            resultado += ponteiroAuxiliar.getDado();
+            if (i != 0) {
+                resultado += ",";
+            }
+            ponteiroAuxiliar = ponteiroAuxiliar.getAnterior();
+        }
+        return resultado + "]";
     }
 
 }
