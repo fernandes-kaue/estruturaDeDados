@@ -53,6 +53,26 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
     }
 
     /**
+     * função que desempilha (remove) um dado da pilha
+     * 
+     * @return retorna o dado que foi desempilhado, podendo este ser reutilizado ou
+     *         descartado, à escolha do usuário
+     */
+    @Override
+    public T desempilhar() {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Pilha Vazia!");
+        }
+        T dadoTopo = ponteiroTopo.getDado();
+        ponteiroTopo = ponteiroTopo.getAnterior();
+        quantidade--;
+        if (!estaVazia()) {
+            ponteiroTopo.setProximo(null);
+        }
+        return dadoTopo;
+    }
+
+    /**
      * função que retorna o dado do topo da pilha sem o remover da pilha
      * 
      * @return retorna o dado topo sem o remover da estrutura
