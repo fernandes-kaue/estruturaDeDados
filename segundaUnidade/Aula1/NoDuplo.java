@@ -1,3 +1,4 @@
+package Aula1;
 /**
  * classe auxiliar para manutenção de nós e
  * posiçoes na pilha estatica, uma vez que
