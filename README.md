@@ -20,6 +20,7 @@
  ┃ ┣ 📂 Aula6 - Algoritmos de ordenação 
  ┣ 📂 segundaUnidade
  ┃ ┣ 📂 Aula1 - Introdução à pilhas dinâmicas
+ ┃ ┣ 📂 Aula2 - Introdução à filas dinâmicas
  ┣ 📂 terceiraUnidade
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
