@@ -44,6 +44,10 @@ public interface Enfileiravel<T> {
 
     void atualizarFim();
 
+    T desenfileirarInicio();
+
+    T desenfileirarFim();
+
     boolean estaCheia();
 
     boolean estaVazia();
