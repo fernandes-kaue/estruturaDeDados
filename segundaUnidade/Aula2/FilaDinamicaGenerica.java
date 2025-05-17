@@ -37,6 +37,51 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         this(10);
     }
 
+    // métodos auxiliares
+
+    /**
+     * método que verifica se a fila esta cheia, com base na quantidade de
+     * elementos
+     * 
+     * @return true se a fila estiver cheia, false caso contrário
+     */
+    @Override
+    public boolean estaCheia() {
+        return quantidade == tamanho;
+    }
+
+    /**
+     * método que verifica se a fila esta vazia, com base na quantidade de
+     * elementos
+     * 
+     * @return true se a fila estiver vazia, false caso contrário
+     */
+    @Override
+    public boolean estaVazia() {
+        return quantidade == 0;
+    }
+
+    /**
+     * método que imprime a fila, retornando uma
+     * @return String com os elementos da fila
+     */
+    @Override
+    public String imprimirDeFrentePraTras() {
+        String resultado = "[";
+        NoDuplo<T> noAuxiliar = ponteiroInicio;
+
+        for (int i = 0; i < quantidade; i++) {
+            if (i == quantidade - 1) {
+                resultado += noAuxiliar.getDado();
+                else {
+                    resultado += noAuxiliar.getDado() + ", ";
+                }
+                noAuxiliar = noAuxiliar.getProximo();
+            }
+        }
+        return resultado += "]";
+    }
+
     // operações não suportadas para fila simples
     @Override
     public void enfileirarInicio(T dado) {
