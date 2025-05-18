@@ -85,6 +85,34 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
 
     }
 
+    /**
+     * método que atualiza o elemento da frente da fila
+     * 
+     * @param dado dado/elemento a ser atualizado
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
+    @Override
+    public void atualizarInicio(T dado) {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        ponteiroInicio.setDado(dado);
+    }
+
+    /**
+     * método que atualiza o elemento do final da fila
+     * 
+     * @param dado dado/elemento a ser atualizado
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
+    @Override
+    public void atualizarFim(T dado) {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        ponteiroFim.setDado(dado);
+    }
+
     // métodos auxiliares
 
     /**

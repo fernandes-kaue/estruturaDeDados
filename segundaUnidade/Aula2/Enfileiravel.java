@@ -40,9 +40,9 @@ public interface Enfileiravel<T> {
 
     T tras();
 
-    void atualizarInicio();
+    void atualizarInicio(T dado);
 
-    void atualizarFim();
+    void atualizarFim(T dado);
 
     T desenfileirarInicio();
 
