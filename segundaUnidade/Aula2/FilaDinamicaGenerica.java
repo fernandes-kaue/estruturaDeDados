@@ -37,6 +37,30 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         this(10);
     }
 
+    // metodos principais
+    /**
+     * método que adiciona um elemento no fim da fila
+     * 
+     * @param dado dado/elemento a ser adicionado na fila
+     * @throws NoSuchElementException se a fila estiver cheia
+     */
+    @Override
+    public void enfileirarFim(T dado) {
+        if (estaCheia()) {
+            throw new NoSuchElementException("Fila cheia!");
+        }
+        NoDuplo<T> noTemporario = new NoDuplo<>();
+        noTemporario.setDado(dado);
+        if (!estaVazia()) {
+            ponteiroFim.setProximo(noTemporario);
+        } else {
+            ponteiroInicio = noTemporario;
+        }
+        noTemporario.setAnterior(ponteiroFim);
+        ponteiroFim = noTemporario;
+        quantidade++;
+    }
+
     // métodos auxiliares
 
     /**
@@ -65,7 +89,7 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
      * método que imprime a fila, retornando uma
      * @return String com os elementos da fila
      */
-    @Override
+    @Override   
     public String imprimirDeFrentePraTras() {
         String resultado = "[";
         NoDuplo<T> noAuxiliar = ponteiroInicio;
@@ -73,13 +97,13 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         for (int i = 0; i < quantidade; i++) {
             if (i == quantidade - 1) {
                 resultado += noAuxiliar.getDado();
-                else {
+            } else {
                     resultado += noAuxiliar.getDado() + ", ";
                 }
                 noAuxiliar = noAuxiliar.getProximo();
             }
-        }
-        return resultado += "]";
+        }return resultado+="]";
+
     }
 
     // operações não suportadas para fila simples
