@@ -38,6 +38,7 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
     }
 
     // metodos principais
+
     /**
      * método que adiciona um elemento no fim da fila
      * 
@@ -61,7 +62,45 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         quantidade++;
     }
 
+    /**
+     * método que desenfileira um elemento do início e o retorna
+     * 
+     * @return dado/elemento desenfileirado
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
+    @Override
+    public T desenfileirarInicio() {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        T dadoInicio = ponteiroInicio.getDado();
+        ponteiroInicio = ponteiroInicio.getProximo();
+        quantidade--;
+        if (!estaVazia()) {
+            ponteiroInicio.setAnterior(null);
+        } else {
+            ponteiroFim = null;
+        }
+        return dadoInicio;
+
+    }
+
     // métodos auxiliares
+
+    /**
+     * método que retorna o dado da frente da fila
+     * sem alterar a estrutura da fila (espiar)
+     * 
+     * @return dado/elemento da frente da fila
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
+    @Override
+    public T frente() {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        return ponteiroInicio.getDado();
+    }
 
     /**
      * método que verifica se a fila esta cheia, com base na quantidade de
@@ -87,9 +126,10 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
 
     /**
      * método que imprime a fila, retornando uma
+     * 
      * @return String com os elementos da fila
      */
-    @Override   
+    @Override
     public String imprimirDeFrentePraTras() {
         String resultado = "[";
         NoDuplo<T> noAuxiliar = ponteiroInicio;
@@ -98,12 +138,12 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
             if (i == quantidade - 1) {
                 resultado += noAuxiliar.getDado();
             } else {
-                    resultado += noAuxiliar.getDado() + ", ";
-                }
-                noAuxiliar = noAuxiliar.getProximo();
+                resultado += noAuxiliar.getDado() + ", ";
             }
-        }return resultado+="]";
+            noAuxiliar = noAuxiliar.getProximo();
+        }
 
+        return resultado += "]";
     }
 
     // operações não suportadas para fila simples
@@ -126,4 +166,5 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
     public String imprimirDeTrasPraFrente() {
         throw new UnsupportedOperationException("Operação não suportada!");
     }
+
 }
