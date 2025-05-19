@@ -1,4 +1,4 @@
-package Aula2.FilaDinamicaGenericaSimples;
+package Aula2.FilaDinamicaGenericaDupla.src;
 
 /**
  * Esta classe implementa uma fila dinâmica genérica.
@@ -10,7 +10,10 @@ package Aula2.FilaDinamicaGenericaSimples;
 
 import java.util.NoSuchElementException;
 
-public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
+import Aula2.FilaDinamicaGenericaSimples.src.Enfileiravel;
+import Aula2.FilaDinamicaGenericaSimples.src.NoDuplo;
+
+public class FilaDinamicaGenericaDupla<T> implements Enfileiravel<T> {
 
     private int quantidade;
     private int tamanho;
@@ -22,7 +25,7 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
      * 
      * @param tamanho tamanho máximo da fila
      */
-    public FilaDinamicaGenerica(int tamanho) {
+    public FilaDinamicaGenericaDupla(int tamanho) {
         quantidade = 0;
         this.tamanho = tamanho;
         ponteiroInicio = null;
@@ -33,7 +36,7 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
      * construtor da fila dinâmica genérica sem tamanho informado,
      * tendo um tamanho padrão de 10
      */
-    public FilaDinamicaGenerica() {
+    public FilaDinamicaGenericaDupla() {
         this(10);
     }
 
@@ -173,25 +176,88 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         return resultado += "]";
     }
 
-    // operações não suportadas para fila simples
+    // operações agora suportadas
+
+    /**
+     * método que adiciona um elemento no início da fila
+     * 
+     * @param dado dado/elemento a ser adicionado na fila
+     * @throws NoSuchElementException se a fila estiver cheia
+     */
     @Override
     public void enfileirarInicio(T dado) {
-        throw new UnsupportedOperationException("Operação não suportada!");
+        if (estaCheia()) {
+            throw new NoSuchElementException("Fila cheia!");
+        }
+        NoDuplo<T> noTemporario = new NoDuplo<>();
+        noTemporario.setDado(dado);
+        if (!estaVazia()) {
+            ponteiroInicio.setAnterior(noTemporario);
+        } else {
+            ponteiroFim = noTemporario;
+        }
+        noTemporario.setProximo(ponteiroInicio);
+        ponteiroFim = noTemporario;
+        quantidade++;
     }
 
+    /**
+     * método que desenfileira um elemento do início e o retorna
+     * 
+     * @return dado/elemento desenfileirado
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
     @Override
     public T desenfileirarFim() {
-        throw new UnsupportedOperationException("Operação não suportada!");
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        T dadoFim = ponteiroFim.getDado();
+        ponteiroFim = ponteiroFim.getAnterior();
+        quantidade--;
+        if (!estaVazia()) {
+            ponteiroFim.setProximo(null);
+        } else {
+            ponteiroInicio = null;
+        }
+        return dadoFim;
+
     }
 
+    /**
+     * método que retorna o dado do final da fila
+     * sem alterar a estrutura da fila (espiar)
+     * 
+     * @return dado/elemento do final da fila
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
     @Override
     public T tras() {
-        throw new UnsupportedOperationException("Operação não suportada!");
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        return ponteiroFim.getDado();
     }
 
+    /**
+     * método que imprime a fila, retornando uma
+     * 
+     * @return String com os elementos da fila
+     */
     @Override
     public String imprimirDeTrasPraFrente() {
-        throw new UnsupportedOperationException("Operação não suportada!");
+        String resultado = "[";
+        NoDuplo<T> noAuxiliar = ponteiroFim;
+
+        for (int i = 0; i < quantidade; i++) {
+            resultado += noAuxiliar.getDado();
+            if (i != quantidade - 1) {
+                resultado += ",";
+            }
+            noAuxiliar = noAuxiliar.getAnterior();
+        }
+
+        return resultado += "]";
     }
 
 }

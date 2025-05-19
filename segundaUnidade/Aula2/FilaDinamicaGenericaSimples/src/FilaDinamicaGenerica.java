@@ -1,4 +1,4 @@
-package Aula2.FilaDinamicaGenericaSimples;
+package Aula2.FilaDinamicaGenericaSimples.src;
 
 /**
  * Esta classe implementa uma fila dinâmica genérica.
@@ -9,9 +9,6 @@ package Aula2.FilaDinamicaGenericaSimples;
  */
 
 import java.util.NoSuchElementException;
-
-import Aula2.FilaDinamicaGenericaSimples.Enfileiravel;
-import Aula2.FilaDinamicaGenericaSimples.NoDuplo;
 
 public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
 
@@ -176,69 +173,25 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         return resultado += "]";
     }
 
-    // operações agora suportadas
+    // operações não suportadas para fila simples
     @Override
     public void enfileirarInicio(T dado) {
         throw new UnsupportedOperationException("Operação não suportada!");
     }
 
-    /**
-     * método que desenfileira um elemento do início e o retorna
-     * 
-     * @return dado/elemento desenfileirado
-     * @throws NoSuchElementException se a fila estiver vazia
-     */
     @Override
     public T desenfileirarFim() {
-        if (estaVazia()) {
-            throw new NoSuchElementException("Fila vazia!");
-        }
-        T dadoFim = ponteiroFim.getDado();
-        ponteiroFim = ponteiroFim.getAnterior();
-        quantidade--;
-        if (!estaVazia()) {
-            ponteiroFim.setProximo(null);
-        } else {
-            ponteiroInicio = null;
-        }
-        return dadoFim;
-
+        throw new UnsupportedOperationException("Operação não suportada!");
     }
 
-    /**
-     * método que retorna o dado do final da fila
-     * sem alterar a estrutura da fila (espiar)
-     * 
-     * @return dado/elemento do final da fila
-     * @throws NoSuchElementException se a fila estiver vazia
-     */
     @Override
     public T tras() {
-        if (estaVazia()) {
-            throw new NoSuchElementException("Fila vazia!");
-        }
-        return ponteiroFim.getDado();
+        throw new UnsupportedOperationException("Operação não suportada!");
     }
 
-    /**
-     * método que imprime a fila, retornando uma
-     * 
-     * @return String com os elementos da fila
-     */
     @Override
     public String imprimirDeTrasPraFrente() {
-        String resultado = "[";
-        NoDuplo<T> noAuxiliar = ponteiroFim;
-
-        for (int i = 0; i < quantidade; i++) {
-            resultado += noAuxiliar.getDado();
-            if (i != quantidade - 1) {
-                resultado += ",";
-            }
-            noAuxiliar = noAuxiliar.getAnterior();
-        }
-
-        return resultado += "]";
+        throw new UnsupportedOperationException("Operação não suportada!");
     }
 
 }
