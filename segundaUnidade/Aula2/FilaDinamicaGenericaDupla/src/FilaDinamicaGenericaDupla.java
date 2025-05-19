@@ -10,9 +10,6 @@ package Aula2.FilaDinamicaGenericaDupla.src;
 
 import java.util.NoSuchElementException;
 
-import Aula2.FilaDinamicaGenericaSimples.src.Enfileiravel;
-import Aula2.FilaDinamicaGenericaSimples.src.NoDuplo;
-
 public class FilaDinamicaGenericaDupla<T> implements Enfileiravel<T> {
 
     private int quantidade;

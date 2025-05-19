@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Aula2.FilaDinamicaGenericaSimples.src","l":"Enfileiravel"},{"p":"Aula2.FilaDinamicaGenericaSimples.src","l":"FilaDinamicaGenerica"},{"p":"Aula2.FilaDinamicaGenericaSimples.src","l":"NoDuplo"}];updateSearchResults();
