@@ -182,9 +182,27 @@ public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {
         throw new UnsupportedOperationException("Operação não suportada!");
     }
 
+    /**
+     * método que desenfileira um elemento do início e o retorna
+     * 
+     * @return dado/elemento desenfileirado
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
     @Override
     public T desenfileirarFim() {
-        throw new UnsupportedOperationException("Operação não suportada!");
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        T dadoFim = ponteiroFim.getDado();
+        ponteiroFim = ponteiroFim.getAnterior();
+        quantidade--;
+        if (!estaVazia()) {
+            ponteiroFim.setProximo(null);
+        } else {
+            ponteiroInicio = null;
+        }
+        return dadoFim;
+
     }
 
     /**
