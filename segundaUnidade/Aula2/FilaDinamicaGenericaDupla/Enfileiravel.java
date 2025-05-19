@@ -1,4 +1,4 @@
-package Aula2;
+package Aula2.FilaDinamicaGenericaSimples;
 
 //javadoc -d doc src/*.java
 

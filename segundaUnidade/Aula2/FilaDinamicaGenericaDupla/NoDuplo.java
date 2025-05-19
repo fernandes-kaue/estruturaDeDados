@@ -1,4 +1,4 @@
-package Aula2;
+package Aula2.FilaDinamicaGenericaSimples;
 
 public class NoDuplo<T> {
     private NoDuplo<T> anterior;
