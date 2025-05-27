@@ -1,4 +1,4 @@
-package Aula3;
+package Aula3.src;
 
 /**
  * exceção lançada quando operação tenta

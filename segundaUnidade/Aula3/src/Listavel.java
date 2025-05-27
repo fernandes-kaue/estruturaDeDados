@@ -1,4 +1,4 @@
-package Aula3;
+package Aula3.src;
 
 /**
  * Interface que define operações essenciais para objetos que podem ser

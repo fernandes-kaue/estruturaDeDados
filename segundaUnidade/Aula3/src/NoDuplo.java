@@ -1,4 +1,4 @@
-package Aula3;
+package Aula3.src;
 
 /**
  * Classe representando um nó de uma lista duplamente encadeada
