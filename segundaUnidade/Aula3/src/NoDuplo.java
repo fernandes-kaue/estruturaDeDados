@@ -33,6 +33,15 @@ public class NoDuplo<T> {
     }
 
     /**
+     * Construtor padrão que inicializa o nó sem dado e sem referências.
+     */
+    public NoDuplo() {
+        this.dado = null;
+        this.anterior = null;
+        this.proximo = null;
+    }
+
+    /**
      * Retorna o dado armazenado no nó.
      *
      * @return o dado do nó
