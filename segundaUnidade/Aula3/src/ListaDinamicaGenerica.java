@@ -24,4 +24,29 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     /** ponteiro para último nó da lista */
     private NoDuplo<T> ponteiroFim;
 
+    // construtores
+
+    /**
+     * Construtor padrão que inicializa a lista com tamanho máximo de 10.
+     */
+    public ListaDinamicaGenerica() {
+        this(10);
+    }
+
+    /**
+     * Construtor que inicializa a lista com o tamanho máximo especificado.
+     * 
+     * @param tamanho o tamanho máximo da lista
+     */
+    public ListaDinamicaGenerica(int tamanho) {
+        ponteiroInicio = null;
+        ponteiroFim = null;
+        quantidade = 0;
+        this.tamanho = tamanho;
+    }
+
+    // métodos principais
+
+    // métodos auxiliares
+
 }
