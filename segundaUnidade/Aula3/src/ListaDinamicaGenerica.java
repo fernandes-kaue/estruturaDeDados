@@ -48,5 +48,43 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     // métodos principais
 
     // métodos auxiliares
+    /**
+     * Verifica se a lista está cheia.
+     * 
+     * @return true se a lista estiver cheia, false caso contrário
+     */
+    @Override
+    public boolean estaCheia() {
+        return quantidade == tamanho;
+    }
 
+    /**
+     * Verifica se a lista está vazia.
+     * 
+     * @return true se a lista estiver vaiza, false caso contrário
+     */
+    @Override
+    public boolean estaVazia() {
+        return quantidade == 0;
+    }
+
+    /**
+     * Retorna uma string representando a lista, com elementos separados por
+     * vírgula.
+     * 
+     * @return uma string representando a lista
+     */
+    @Override
+    public String imprimir() {
+        String resultado = "[";
+        NoDuplo<T> ponteiroAuxiliar = ponteiroInicio;
+        for (int i = 0; i < quantidade; i++) {
+            resultado += ponteiroAuxiliar.getDado();
+            if (i != quantidade - 1) {
+                resultado += ",";
+            }
+            ponteiroAuxiliar = ponteiroAuxiliar.getProximo();
+        }
+        return resultado + "]";
+    }
 }
