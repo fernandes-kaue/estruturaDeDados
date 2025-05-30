@@ -1,6 +1,7 @@
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import Aula3.src.*;
 
 /**
  * Classe de testes para a implementação de ListaDinamicaGenerica.
@@ -143,7 +144,7 @@ public class ListaDinamicaGenericaTest {
             lista.selecionar(1);
             fail("Deveria ter lançado exceção de índice inválido!");
         } catch (IndexOutOfBoundsException e) {
-            assertEquals("Indice Invalido!", e.getMessage());
+            assertEquals("Posição inválida!", e.getMessage());
         }
     }
 
