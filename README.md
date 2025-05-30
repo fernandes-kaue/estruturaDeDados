@@ -21,6 +21,7 @@
  ┣ 📂 segundaUnidade
  ┃ ┣ 📂 Aula1 - Introdução à pilhas dinâmicas
  ┃ ┣ 📂 Aula2 - Introdução à filas dinâmicas
+ ┃ ┣ 📂 Aula3 - Introdução à listas dinâmicas
  ┣ 📂 terceiraUnidade
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
