@@ -1,4 +1,4 @@
-
+package Aula5.src;
 
 /**
  * Interface que define as operações básicas para uma estrutura
