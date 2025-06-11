@@ -1,0 +1,4 @@
+Algoritmos de ordenação:
+1. Quicksort
+2. Heapsort
+3. Mergesort
