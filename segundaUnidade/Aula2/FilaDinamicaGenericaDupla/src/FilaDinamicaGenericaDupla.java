@@ -63,6 +63,29 @@ public class FilaDinamicaGenericaDupla<T> implements Enfileiravel<T> {
     }
 
     /**
+     * método que adiciona um elemento no início da fila
+     *
+     * @param dado dado/elemento a ser adicionado na fila
+     * @throws NoSuchElementException se a fila estiver cheia
+     */
+    @Override
+    public void enfileirarInicio(T dado) {
+        if (estaCheia()) {
+            throw new NoSuchElementException("Fila cheia!");
+        }
+        NoDuplo<T> noTemporario = new NoDuplo<>();
+        noTemporario.setDado(dado);
+        if (!estaVazia()) {
+            ponteiroInicio.setAnterior(noTemporario);
+        } else {
+            ponteiroFim = noTemporario;
+        }
+        noTemporario.setProximo(ponteiroInicio);
+        ponteiroFim = noTemporario;
+        quantidade++;
+    }
+
+    /**
      * método que desenfileira um elemento do início e o retorna
      * 
      * @return dado/elemento desenfileirado
@@ -82,6 +105,29 @@ public class FilaDinamicaGenericaDupla<T> implements Enfileiravel<T> {
             ponteiroFim = null;
         }
         return dadoInicio;
+
+    }
+
+    /**
+     * método que desenfileira um elemento do início e o retorna
+     *
+     * @return dado/elemento desenfileirado
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
+    @Override
+    public T desenfileirarFim() {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        T dadoFim = ponteiroFim.getDado();
+        ponteiroFim = ponteiroFim.getAnterior();
+        quantidade--;
+        if (!estaVazia()) {
+            ponteiroFim.setProximo(null);
+        } else {
+            ponteiroInicio = null;
+        }
+        return dadoFim;
 
     }
 
@@ -131,6 +177,21 @@ public class FilaDinamicaGenericaDupla<T> implements Enfileiravel<T> {
     }
 
     /**
+     * método que retorna o dado do final da fila
+     * sem alterar a estrutura da fila (espiar)
+     *
+     * @return dado/elemento do final da fila
+     * @throws NoSuchElementException se a fila estiver vazia
+     */
+    @Override
+    public T tras() {
+        if (estaVazia()) {
+            throw new NoSuchElementException("Fila vazia!");
+        }
+        return ponteiroFim.getDado();
+    }
+
+    /**
      * método que verifica se a fila esta cheia, com base na quantidade de
      * elementos
      * 
@@ -173,72 +234,9 @@ public class FilaDinamicaGenericaDupla<T> implements Enfileiravel<T> {
         return resultado += "]";
     }
 
-    // operações agora suportadas
-
-    /**
-     * método que adiciona um elemento no início da fila
-     * 
-     * @param dado dado/elemento a ser adicionado na fila
-     * @throws NoSuchElementException se a fila estiver cheia
-     */
-    @Override
-    public void enfileirarInicio(T dado) {
-        if (estaCheia()) {
-            throw new NoSuchElementException("Fila cheia!");
-        }
-        NoDuplo<T> noTemporario = new NoDuplo<>();
-        noTemporario.setDado(dado);
-        if (!estaVazia()) {
-            ponteiroInicio.setAnterior(noTemporario);
-        } else {
-            ponteiroFim = noTemporario;
-        }
-        noTemporario.setProximo(ponteiroInicio);
-        ponteiroFim = noTemporario;
-        quantidade++;
-    }
-
-    /**
-     * método que desenfileira um elemento do início e o retorna
-     * 
-     * @return dado/elemento desenfileirado
-     * @throws NoSuchElementException se a fila estiver vazia
-     */
-    @Override
-    public T desenfileirarFim() {
-        if (estaVazia()) {
-            throw new NoSuchElementException("Fila vazia!");
-        }
-        T dadoFim = ponteiroFim.getDado();
-        ponteiroFim = ponteiroFim.getAnterior();
-        quantidade--;
-        if (!estaVazia()) {
-            ponteiroFim.setProximo(null);
-        } else {
-            ponteiroInicio = null;
-        }
-        return dadoFim;
-
-    }
-
-    /**
-     * método que retorna o dado do final da fila
-     * sem alterar a estrutura da fila (espiar)
-     * 
-     * @return dado/elemento do final da fila
-     * @throws NoSuchElementException se a fila estiver vazia
-     */
-    @Override
-    public T tras() {
-        if (estaVazia()) {
-            throw new NoSuchElementException("Fila vazia!");
-        }
-        return ponteiroFim.getDado();
-    }
-
     /**
      * método que imprime a fila, retornando uma
-     * 
+     *
      * @return String com os elementos da fila
      */
     @Override

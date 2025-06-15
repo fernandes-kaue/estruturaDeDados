@@ -1,13 +1,5 @@
 package Aula2.FilaDinamicaGenericaSimples.src;
 
-/**
- * Esta classe implementa uma fila dinâmica genérica.
- * 
- * @author Kauê Fernandes
- * @version 0.1
- * @since 2025/05/16
- */
-
 import java.util.NoSuchElementException;
 
 public class FilaDinamicaGenerica<T> implements Enfileiravel<T> {

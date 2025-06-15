@@ -90,7 +90,7 @@ public class PilhaDinamicaGenerica<T> implements Empilhavel<T> {
     /**
      * função que atualiza o topo da pilha
      * 
-     * @param dado é o novo dado para o topo
+     * @param novoDado é o novo dado para o topo
      * @throws NoSuchElementException se a pilha estiver vazia
      */
     @Override
