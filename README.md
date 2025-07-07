@@ -22,6 +22,8 @@
  ┃ ┣ 📂 Aula1 - Introdução à pilhas dinâmicas
  ┃ ┣ 📂 Aula2 - Introdução à filas dinâmicas
  ┃ ┣ 📂 Aula3 - Introdução à listas dinâmicas
+ ┃ ┣ 📂 Aula5 - Introdução à árvore heap
+ ┃ ┣ 📂 Aula3 - Algoritmos de ordenação pt. 2
  ┣ 📂 terceiraUnidade
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
