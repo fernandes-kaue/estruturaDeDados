@@ -147,11 +147,11 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     }
 
     /**
-     * Atualiza o elemento de uma dada posição da lista
-     * 
-     * @param posicao  a posição do elemento a ser atualizado
-     * @param novoDado o novo dado
-     * @throws UnderflowException        se a lista estiver vazia
+     * Método para apagar um dado com base na posição que for passada
+     *
+     * @param posicao a posição do dado a ser removido
+     * @return dado apagado para posterior uso
+     * @throws UnderflowException se a lista estiver vazia
      * @throws IndexOutOfBoundsException se a posição for inválida
      */
     @Override
