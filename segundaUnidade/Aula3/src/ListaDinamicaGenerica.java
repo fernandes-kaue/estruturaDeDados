@@ -248,7 +248,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     /**
      * Verifica se a lista está vazia.
      * 
-     * @return true se a lista estiver vaiza, false caso contrário
+     * @return true se a lista estiver vazia, false caso contrário
      */
     @Override
     public boolean estaVazia() {
