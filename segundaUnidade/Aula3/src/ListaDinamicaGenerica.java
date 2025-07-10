@@ -5,23 +5,31 @@ package Aula3.src;
  * Esta classe pode ser utilizada para armazenar e manipular dados de forma
  * dinâmica,
  * permitindo operações como anexar, inserir, selecionar e atualizar dados.
- * 
+ *
  * @author Kauê Santos Fernandes
  * @version 0.1
  * @since 2025/05/29
  */
 public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
-    /** quantidade atual de itens na lista */
+    /**
+     * quantidade atual de itens na lista
+     */
     private int quantidade;
 
-    /** tamanho maximo da lista */
+    /**
+     * tamanho maximo da lista
+     */
     private int tamanho;
 
-    /** ponteiro para primeiro nó da lista */
+    /**
+     * ponteiro para primeiro nó da lista
+     */
     private NoDuplo<T> ponteiroInicio;
 
-    /** ponteiro para último nó da lista */
+    /**
+     * ponteiro para último nó da lista
+     */
     private NoDuplo<T> ponteiroFim;
 
     // construtores
@@ -35,7 +43,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Construtor que inicializa a lista com o tamanho máximo especificado.
-     * 
+     *
      * @param tamanho o tamanho máximo da lista
      */
     public ListaDinamicaGenerica(int tamanho) {
@@ -49,7 +57,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Anexa um novo dado ao final da lista.
-     * 
+     *
      * @param dado o dado a ser anexado
      * @throws OverflowException se a lista estiver cheia
      */
@@ -75,7 +83,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Insere um dado em uma posição específica da lista.
-     * 
+     *
      * @param posicao a posição onde o dado será inserido
      * @param dado    o dado a ser inserido
      * @throws OverflowException         se a lista estiver cheia
@@ -124,7 +132,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Atualiza o elemento de uma dada posição da lista
-     * 
+     *
      * @param posicao  a posição do elemento a ser atualizado
      * @param novoDado o novo dado
      * @throws UnderflowException        se a lista estiver vazia
@@ -151,7 +159,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
      *
      * @param posicao a posição do dado a ser removido
      * @return dado apagado para posterior uso
-     * @throws UnderflowException se a lista estiver vazia
+     * @throws UnderflowException        se a lista estiver vazia
      * @throws IndexOutOfBoundsException se a posição for inválida
      */
     @Override
@@ -190,7 +198,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Retorna o elemento de uma dada posição da lista.
-     * 
+     *
      * @param posicao a posição do elemento a ser selecionado
      * @return o dado selecionado
      * @throws UnderflowException        se a lista estiver vazia
@@ -214,7 +222,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Retorna um array contendo todos os dados da lista.
-     * 
+     *
      * @return um array contendo todos os dados da lista
      * @throws UnderflowException se a lista estiver vazia
      */
@@ -235,9 +243,10 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     }
 
     // métodos auxiliares
+
     /**
      * Verifica se a lista está cheia.
-     * 
+     *
      * @return true se a lista estiver cheia, false caso contrário
      */
     @Override
@@ -247,7 +256,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     /**
      * Verifica se a lista está vazia.
-     * 
+     *
      * @return true se a lista estiver vazia, false caso contrário
      */
     @Override
@@ -258,7 +267,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     /**
      * Retorna uma string representando a lista, com elementos separados por
      * vírgula.
-     * 
+     *
      * @return uma string representando a lista
      */
     @Override
