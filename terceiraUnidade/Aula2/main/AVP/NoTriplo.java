@@ -1,9 +1,12 @@
-package terceiraUnidade;
-
+package terceiraUnidade.Aula2.main.AVP;
 /**
- * Representa um nó de árvore binária com ponteiros para o genitor, esquerda e direita.
+ * Representa um nó de árvore vermelho e preto com ponteiros para o genitor, esquerda e direita.
+ * Inclui campo de cor para manter as propriedades da árvore vermelho e preto.
  *
  * @param <T> Tipo do dado armazenado no nó.
+ * @author Cláudio Rodolfo Sousa de Oliveira
+ * @version 1.0
+ * @since July 1, 2025
  */
 public class NoTriplo<T> {
 
@@ -26,6 +29,18 @@ public class NoTriplo<T> {
      * Referência ao nó filho à direita.
      */
     private NoTriplo<T> direita;
+
+    /**
+     * Cor do nó (VERMELHO ou PRETO).
+     */
+    private Cor cor;
+
+    /**
+     * Construtor padrão. Cria um nó vermelho.
+     */
+    public NoTriplo() {
+        this.cor = Cor.VERMELHO; // Novos nós são sempre vermelhos
+    }
 
     /**
      * Retorna o dado armazenado.
@@ -63,7 +78,7 @@ public class NoTriplo<T> {
      * Retorna o filho à esquerda.
      * @return Nó à esquerda.
      */
-    public NoTriplo<T>  getEsquerda() {
+    public NoTriplo<T> getEsquerda() {
         return esquerda;
     }
 
@@ -89,5 +104,46 @@ public class NoTriplo<T> {
      */
     public void setDireita(NoTriplo<T> direita) {
         this.direita = direita;
+    }
+
+    /**
+     * Retorna a cor do nó.
+     * @return Cor do nó (VERMELHO ou PRETO).
+     */
+    public Cor getCor() {
+        return cor;
+    }
+
+    /**
+     * Define a cor do nó.
+     * @param cor Nova cor do nó.
+     */
+    public void setCor(Cor cor) {
+        this.cor = cor;
+    }
+
+    /**
+     * Verifica se o nó é vermelho.
+     * @return true se o nó é vermelho, false se é preto.
+     */
+    public boolean isVermelho() {
+        return cor == Cor.VERMELHO;
+    }
+
+    /**
+     * Verifica se o nó é preto.
+     * @return true se o nó é preto, false se é vermelho.
+     */
+    public boolean isPreto() {
+        return cor == Cor.PRETO;
+    }
+
+    /**
+     * Retorna uma representação em string do nó.
+     * @return String com o dado e a cor do nó.
+     */
+    @Override
+    public String toString() {
+        return dado + "(" + (cor == Cor.VERMELHO ? "V" : "P") + ")";
     }
 }
