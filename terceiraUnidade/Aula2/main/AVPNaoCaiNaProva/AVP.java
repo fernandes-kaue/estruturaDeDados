@@ -1,4 +1,4 @@
-package terceiraUnidade.Aula2.main.AVP;
+package terceiraUnidade.Aula2.main.AVPNaoCaiNaProva;
 
 /**
  * Implementação de uma Árvore Vermelho e Preto (AVP) genérica.
@@ -109,7 +109,7 @@ public class AVP<T extends Comparable<T>> implements Arborizavel<T> {
         } else {
             // Caso 3b: Tio é preto ou null
             if (pai == avo.getEsquerda() && no == pai.getDireita()) {
-                // Rotação esquerda-direita
+                // Rotator esquerda-direita
                 rotacaoEsquerda(pai);
                 no = pai;
                 pai = no.getGenitor();

@@ -1,4 +1,4 @@
-package terceiraUnidade.Aula2.main.AVP;
+package terceiraUnidade.Aula2.main.AVPNaoCaiNaProva;
 
 /**
  * Interface que define operações básicas para árvores binárias.

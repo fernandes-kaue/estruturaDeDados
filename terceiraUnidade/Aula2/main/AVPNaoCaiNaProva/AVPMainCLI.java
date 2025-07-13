@@ -1,4 +1,4 @@
-package terceiraUnidade.Aula2.main.AVP;
+package terceiraUnidade.Aula2.main.AVPNaoCaiNaProva;
 
 
 import java.util.Scanner;

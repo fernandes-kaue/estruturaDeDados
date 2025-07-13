@@ -1,4 +1,4 @@
-package terceiraUnidade.Aula2.main.AVP;
+package terceiraUnidade.Aula2.main.AVPNaoCaiNaProva;
 /**
  * Representa um nó de árvore vermelho e preto com ponteiros para o genitor, esquerda e direita.
  * Inclui campo de cor para manter as propriedades da árvore vermelho e preto.
