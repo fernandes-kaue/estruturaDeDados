@@ -9,18 +9,21 @@ public interface Arborizavel<T> {
 
     /**
      * Retorna o nó raiz da árvore.
+     *
      * @return Nó raiz.
      */
     NoTriplo<T> getRaiz();
 
     /**
      * Insere um elemento na árvore.
+     *
      * @param dado Elemento a ser inserido.
      */
     void inserir(T dado);
 
     /**
      * Remove um elemento da árvore.
+     *
      * @param dado Elemento a ser removido.
      * @return Elemento removido, ou null se não encontrado.
      */
@@ -28,6 +31,7 @@ public interface Arborizavel<T> {
 
     /**
      * Verifica se um elemento existe na árvore.
+     *
      * @param dado Elemento a ser buscado.
      * @return true se o elemento existe, false caso contrário.
      */
@@ -40,18 +44,21 @@ public interface Arborizavel<T> {
 
     /**
      * Retorna uma String com os elementos em pré-ordem.
+     *
      * @return Elementos em pré-ordem.
      */
     String imprimirPreOrdem();
 
     /**
      * Retorna uma String com os elementos em ordem.
+     *
      * @return Elementos em ordem.
      */
     String imprimirEmOrdem();
 
     /**
      * Retorna uma String com os elementos em pós-ordem.
+     *
      * @return Elementos em pós-ordem.
      */
     String imprimirPosOrdem();

@@ -18,6 +18,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     /**
      * Retorna o nó raiz da árvore.
+     *
      * @return Nó raiz.
      */
     @Override
@@ -35,6 +36,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     /**
      * Insere um novo elemento na árvore.
+     *
      * @param dado Elemento a ser inserido.
      */
     @Override
@@ -75,6 +77,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     /**
      * Remove um elemento da árvore.
+     *
      * @param dado Elemento a ser removido.
      * @return Elemento removido, ou null se não encontrado.
      */
@@ -82,20 +85,14 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
     public T apagar(T dado) {
         NoTriplo<T> noAuxiliar = buscar(dado);
         // Nó não encontrado na árvore
-        if (noAuxiliar == null)
-            return null;
+        if (noAuxiliar == null) return null;
 
         // Caso 1: Nó sem filhos
-        if (noAuxiliar.getEsquerda() == null &&
-                noAuxiliar.getDireita() == null)
-            apagarNoFolha(noAuxiliar);
+        if (noAuxiliar.getEsquerda() == null && noAuxiliar.getDireita() == null) apagarNoFolha(noAuxiliar);
             // Caso 2: Nó com um filho
-        else if (noAuxiliar.getEsquerda() == null ||
-                noAuxiliar.getDireita() == null)
-            apagarComUmFilho(noAuxiliar);
+        else if (noAuxiliar.getEsquerda() == null || noAuxiliar.getDireita() == null) apagarComUmFilho(noAuxiliar);
             // Caso 3: Nó com dois filhos
-        else
-            apagarComDoisFilhos(noAuxiliar);
+        else apagarComDoisFilhos(noAuxiliar);
 
         return dado;
     }
@@ -139,8 +136,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
         nodo.setDado(noSucessor.getDado());
 
         // Remove o dado duplicado a direita
-        if (noSucessor.getEsquerda() == null &&
-                noSucessor.getDireita() == null) {
+        if (noSucessor.getEsquerda() == null && noSucessor.getDireita() == null) {
             apagarNoFolha(noSucessor);
         } else {
             apagarComUmFilho(noSucessor);
@@ -149,22 +145,21 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     private NoTriplo<T> encontraMenorDireita(NoTriplo<T> nodo) {
         NoTriplo<T> noAuxiliar = nodo.getDireita();
-        while (noAuxiliar.getEsquerda() != null)
-            noAuxiliar = noAuxiliar.getEsquerda();
+        while (noAuxiliar.getEsquerda() != null) noAuxiliar = noAuxiliar.getEsquerda();
 
         return noAuxiliar;
     }
 
     private NoTriplo<T> encontraMaiorEsquerda(NoTriplo<T> nodo) {
         NoTriplo<T> noAuxiliar = nodo.getEsquerda();
-        while (noAuxiliar.getDireita() != null)
-            noAuxiliar = noAuxiliar.getDireita();
+        while (noAuxiliar.getDireita() != null) noAuxiliar = noAuxiliar.getDireita();
 
         return noAuxiliar;
     }
 
     /**
      * Verifica se um elemento existe na árvore.
+     *
      * @param dado Elemento a ser buscado.
      * @return true se o elemento existe, false caso contrário.
      */
@@ -177,8 +172,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
         NoTriplo<T> noAuxiliar = raiz;
         while (noAuxiliar != null) {
             int comparacao = dado.compareTo(noAuxiliar.getDado());
-            if (comparacao == 0)
-                return noAuxiliar;
+            if (comparacao == 0) return noAuxiliar;
 
             noAuxiliar = ((comparacao <= 0) ? noAuxiliar.getEsquerda() : noAuxiliar.getDireita());
         }
@@ -187,6 +181,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     /**
      * Retorna uma String com os elementos em pré-ordem.
+     *
      * @return Elementos em pré-ordem.
      */
     @Override
@@ -196,6 +191,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     /**
      * Retorna uma String com os elementos em ordem.
+     *
      * @return Elementos em ordem.
      */
     @Override
@@ -205,6 +201,7 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     /**
      * Retorna uma String com os elementos em pós-ordem.
+     *
      * @return Elementos em pós-ordem.
      */
     @Override
@@ -214,23 +211,17 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     private String imprimirPreOrdemRec(NoTriplo<T> raizAtual) {
         if (raizAtual == null) return "";   //caso base
-        return raizAtual.getDado() + " " +
-                imprimirPreOrdemRec(raizAtual.getEsquerda()) +  " " +
-                imprimirPreOrdemRec(raizAtual.getDireita());
+        return raizAtual.getDado() + " " + imprimirPreOrdemRec(raizAtual.getEsquerda()) + " " + imprimirPreOrdemRec(raizAtual.getDireita());
     }
 
     private String imprimirEmOrdemRec(NoTriplo<T> raizAtual) {
         if (raizAtual == null) return "";   //caso base
-        return imprimirEmOrdemRec(raizAtual.getEsquerda()) + " " +
-                raizAtual.getDado() + " " +
-                imprimirEmOrdemRec(raizAtual.getDireita());
+        return imprimirEmOrdemRec(raizAtual.getEsquerda()) + " " + raizAtual.getDado() + " " + imprimirEmOrdemRec(raizAtual.getDireita());
     }
 
     private String imprimirPosOrdemRec(NoTriplo<T> raizAtual) {
         if (raizAtual == null) return "";   //caso base
-        return imprimirPosOrdemRec(raizAtual.getEsquerda()) + " " +
-                imprimirPosOrdemRec(raizAtual.getDireita()) +  " " +
-                raizAtual.getDado();
+        return imprimirPosOrdemRec(raizAtual.getEsquerda()) + " " + imprimirPosOrdemRec(raizAtual.getDireita()) + " " + raizAtual.getDado();
     }
 
     private String formataSaida(String msg) {

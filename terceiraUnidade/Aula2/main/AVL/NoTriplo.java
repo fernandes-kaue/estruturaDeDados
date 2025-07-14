@@ -35,7 +35,7 @@ public class NoTriplo<T> {
         this.genitor = genitor;
     }
 
-    public NoTriplo<T>  getEsquerda() {
+    public NoTriplo<T> getEsquerda() {
         return esquerda;
     }
 

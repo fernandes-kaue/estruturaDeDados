@@ -29,6 +29,7 @@ public class NoTriplo<T> {
 
     /**
      * Retorna o dado armazenado.
+     *
      * @return Dado do nó.
      */
     public T getDado() {
@@ -37,6 +38,7 @@ public class NoTriplo<T> {
 
     /**
      * Define o dado do nó.
+     *
      * @param dado Novo valor.
      */
     public void setDado(T dado) {
@@ -45,6 +47,7 @@ public class NoTriplo<T> {
 
     /**
      * Retorna o genitor (pai) do nó.
+     *
      * @return Nó genitor.
      */
     public NoTriplo<T> getGenitor() {
@@ -53,6 +56,7 @@ public class NoTriplo<T> {
 
     /**
      * Define o genitor (pai) do nó.
+     *
      * @param genitor Novo nó genitor.
      */
     public void setGenitor(NoTriplo<T> genitor) {
@@ -61,14 +65,16 @@ public class NoTriplo<T> {
 
     /**
      * Retorna o filho à esquerda.
+     *
      * @return Nó à esquerda.
      */
-    public NoTriplo<T>  getEsquerda() {
+    public NoTriplo<T> getEsquerda() {
         return esquerda;
     }
 
     /**
      * Define o filho à esquerda.
+     *
      * @param esquerda Novo nó à esquerda.
      */
     public void setEsquerda(NoTriplo<T> esquerda) {
@@ -77,6 +83,7 @@ public class NoTriplo<T> {
 
     /**
      * Retorna o filho à direita.
+     *
      * @return Nó à direita.
      */
     public NoTriplo<T> getDireita() {
@@ -85,6 +92,7 @@ public class NoTriplo<T> {
 
     /**
      * Define o filho à direita.
+     *
      * @param direita Novo nó à direita.
      */
     public void setDireita(NoTriplo<T> direita) {
