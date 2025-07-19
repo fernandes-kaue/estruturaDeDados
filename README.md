@@ -25,6 +25,10 @@
  ┃ ┣ 📂 Aula5 - Introdução à árvore heap
  ┃ ┣ 📂 Aula6 - Algoritmos de ordenação pt. 2
  ┣ 📂 terceiraUnidade
+ ┃ ┣ 📂 Aula1 - Árvore Binária de Pesquisa - ABP
+ ┃ ┣ 📂 Aula2
+ ┃ ┃ ┣ 📂 Árvore Adelson-Velsky and Landis - AVL
+ ┃ ┃ ┣ 📂 Árvore Vermelho e Preto - AVP
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
  ┣ 📜 README.md
