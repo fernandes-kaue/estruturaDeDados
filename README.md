@@ -29,6 +29,9 @@
  ┃ ┣ 📂 Aula2
  ┃ ┃ ┣ 📂 Árvore Adelson-Velsky and Landis - AVL
  ┃ ┃ ┣ 📂 Árvore Vermelho e Preto - AVP
+ ┃ ┣ 📂 Aula3
+ ┃ ┃ ┣ 📂 Árvore B
+ ┃ ┃ ┣ 📂 Árvore B+
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
  ┣ 📜 README.md
